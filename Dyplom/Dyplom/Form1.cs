@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace PrzepisanyDyplom
@@ -41,7 +42,7 @@ namespace PrzepisanyDyplom
 
         private void NAPIS()
         {
-            char q;
+            char q = (char) 0;
             int n, m;
             pictureBox1.Refresh();
             settextstyle(2,0,4);
@@ -62,8 +63,7 @@ namespace PrzepisanyDyplom
              PISZ(140,130,"DEMONSTRACJA ELEMENTOqW POqL POMIAROWYCH");
              PISZ(140,141,"SYMULACJA  STANOqW  AWARYJNYCH");
              PISZ(140,152,"KROqTKA INFORMACJA O PROGRAMIE");
-                q = (char) 1;
-                // q=readkey;
+             q=readkey();
                 // if q=#27 then pytanie;
                 // setfillstyle(1,7);
                 // if ord(q)<>0 then begin
@@ -80,6 +80,27 @@ namespace PrzepisanyDyplom
             // 1:pokaz;
             // 2:begin n1=1;wybor_awarii;end;
             // 3:informacja;
+        }
+        [DllImport("user32.dll")]
+        public static extern short GetAsyncKeyState(long vKey);
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern short GetKeyState(int keyCode); 
+
+        private char readkey()
+        {
+            bool search = false;
+            short key_my = 0;
+            do
+            {
+
+                for (i = 0; i < 255; i++)
+                {
+                    key_my = GetAsyncKeyState(i);
+                    if (key_my == (System.Int16.MinValue + 1))
+                    { search = true; break; }
+                }
+            } while (search);
+            return (char) key_my;
         }
 
         private void obwodka1(int prx1,int pry1, int prx2, int pry2, int color)
