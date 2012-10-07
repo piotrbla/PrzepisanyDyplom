@@ -7,40 +7,40 @@
 // {===========================================================================}
 // {Procedury rysujace ogonki do polskich liter}
 // procedure pzl(wsx,wsy:integer);
-// begin
+// {
  // line(wsx,wsy,wsx+3,wsy-3);
-// end;
+// };
 // procedure pzae(wsx,wsy:integer);
-// begin
+// {
  // line(wsx,wsy,wsx+1,wsy+1);
-// end;
+// };
 // procedure pzcoz(wsx,wsy:integer);
-// begin
+// {
  // line(wsx,wsy,wsx+1,wsy-1);
-// end;
+// };
 // procedure pzz(wsx,wsy:integer);
-// begin
+// {
  // circle(wsx,wsy,1);
-// end;
+// };
 
 // procedure pisz(wsx,wsy:integer; napis:string);
 // var c:integer;
 // znakp:string;
-// begin
+// {
  // c=length(napis);
  // for i=1 to c do
-  // begin
+  // {
    // znakp=copy(napis,i,1);
    // if znakp="q" then pzcoz(wsx-3,wsy+1) else
    // if znakp="l" then pzl(wsx-7,wsy+8) else
    // if znakp="z" then pzz(wsx-3,wsy+0) else
    // if znakp="a" then pzae(wsx-2,wsy+10) else
-   // begin outtextxy(wsx,wsy,znakp);wsx=wsx+6;end;
-  // end;
- // end;
+   // { outtextxy(wsx,wsy,znakp);wsx=wsx+6;};
+  // };
+ // };
 // {====================================================================================}
 // procedure sygnal(wsx,wsy,on:integer;kwad:boolean);{PROCEDURA RYSOWANIA SYGALIZATORA}
- // begin
+ // {
   // setcolor(3);
   // circle(wsx,wsy,9);
   // setfillstyle(0,0);
@@ -50,30 +50,30 @@
     // 0:line(wsx-9,wsy,wsx+9,wsy);
     // 1:line(wsx,wsy-7,wsx,wsy+7);
     // 2:line(wsx-5,wsy-5,wsx+5,wsy+5);
-   // end;
+   // };
   // if kwad then rectangle(wsx-10,wsy-7,wsx+10,wsy+7);
- // end;
+ // };
 // {==================================================================================}
 // procedure miernik(lwx,lwy,zak:integer;miano:string;ram:boolean);{procedura rysujaca miernik}
- // begin
+ // {
   // setcolor(3);
   // rectangle(lwx,lwy,lwx+7*zak,lwy+20);
   // if ram then rectangle(lwx-2,lwy-2,lwx+7*zak+2,lwy+22);
   // settextstyle(smallfont,horizdir,4);
   // outtextxy(lwx+4,lwy+9,miano);
- // end;
+ // };
 // {================================================================================}
 // procedure uziemienie(wsx,wsy:integer);{procedura rysujaca uziemienie}
- // begin
+ // {
   // line(wsx-5,wsy+10,wsx+5,wsy+10);
   // line(wsx-3,wsy+12,wsx+3,wsy+12);
   // line(wsx-1,wsy+14,wsx+1,wsy+14);
   // line(wsx,wsy,wsx,wsy+10);
- // end;
+ // };
 // {=================================================================================}
 // procedure lacznik(wsx,wsy,pos:integer);{Procedura rysujaca lacznik wielopozycyjny}
 // var kat:integer;
- // begin
+ // {
   // setcolor(3);
   // setfillstyle(0,1);
   // circle(wsx,wsy,10);
@@ -83,62 +83,62 @@
   // kat=(45*pos);
   // arc(wsx,wsy,kat,kat+180,3);
   // case pos of
-   // 0:begin line(wsx-3,wsy,wsx,wsy+7);line(wsx+3,wsy,wsx,wsy+7);end;
-   // 1:begin line(wsx-2,wsy+2,wsx+6,wsy+6);line(wsx+2,wsy-2,wsx+6,wsy+6);end;
-   // 2:begin line(wsx,wsy-2,wsx+9,wsy);line(wsx,wsy+2,wsx+9,wsy);end;
-   // 3:begin line(wsx-3,wsy-1,wsx+6,wsy-6);line(wsx+2,wsy+2,wsx+6,wsy-6);end;
-   // 4:begin line(wsx-3,wsy,wsx,wsy-7);line(wsx+3,wsy,wsx,wsy-7);end;
-   // 5:begin line(wsx+2,wsy-2,wsx-6,wsy-6);line(wsx-2,wsy+2,wsx-6,wsy-6);end;
-   // 6:begin line(wsx,wsy-2,wsx-9,wsy);line(wsx,wsy+2,wsx-9,wsy);end;
-   // 7:begin line(wsx+3,wsy+1,wsx-6,wsy+6);line(wsx-2,wsy-2,wsx-6,wsy+6);end;
-  // end;
- // end;
+   // 0:{ line(wsx-3,wsy,wsx,wsy+7);line(wsx+3,wsy,wsx,wsy+7);};
+   // 1:{ line(wsx-2,wsy+2,wsx+6,wsy+6);line(wsx+2,wsy-2,wsx+6,wsy+6);};
+   // 2:{ line(wsx,wsy-2,wsx+9,wsy);line(wsx,wsy+2,wsx+9,wsy);};
+   // 3:{ line(wsx-3,wsy-1,wsx+6,wsy-6);line(wsx+2,wsy+2,wsx+6,wsy-6);};
+   // 4:{ line(wsx-3,wsy,wsx,wsy-7);line(wsx+3,wsy,wsx,wsy-7);};
+   // 5:{ line(wsx+2,wsy-2,wsx-6,wsy-6);line(wsx-2,wsy+2,wsx-6,wsy-6);};
+   // 6:{ line(wsx,wsy-2,wsx-9,wsy);line(wsx,wsy+2,wsx-9,wsy);};
+   // 7:{ line(wsx+3,wsy+1,wsx-6,wsy+6);line(wsx-2,wsy-2,wsx-6,wsy+6);};
+  // };
+ // };
 // {==============================================================================================}
 // procedure trafo(wsx,wsy:integer;faz:boolean);{procedura rysujaca transformator 1- lub 3- fazowy}
-  // begin
+  // {
     // circle(wsx,wsy+15,10);
-    // if not faz then circle(wsx,wsy+23,10) else begin
+    // if not faz then circle(wsx,wsy+23,10) else {
       // circle(wsx-8,wsy+23,10);
       // circle(wsx+8,wsy+23,10);
     // line(wsx,wsy,wsx,wsy+8);
     // line(wsx-17,wsy+28,wsx-30,wsy+35);
     // line(wsx+17,wsy+28,wsx+30,wsy+35);
-// end;end;
+// };};
 // {=================================================================================}
 // procedure stacyjka(wsx,wsy:integer);
- // begin
+ // {
   // setcolor(3);
   // circle(wsx,wsy,10);
   // circle(wsx,wsy,7);
   // circle(wsx,wsy,3);
-// end;
+// };
 // {===============================================================================}
 // procedure lampka(wsx,wsy:integer;syg:boolean);{procedura rysujaca lampke}
-// begin
+// {
  // setcolor(1);
  // rectangle(wsx,wsy,wsx+12,wsy+11);
  // rectangle(wsx+2,wsy+2,wsx+10,wsy+9);
  // setfillstyle(6,0);floodfill(wsx+3,wsy+3,1);
- // if syg then begin setfillstyle(6,2);floodfill(wsx+3,wsy+3,1);end;
+ // if syg then { setfillstyle(6,2);floodfill(wsx+3,wsy+3,1);};
  // setcolor(3);
-// end;
+// };
 // {===============================================================================}
 // procedure glowica(wsx,wsy:integer);{procodura rysujaca glowice kablowa}
 // var s:integer;
-// begin
+// {
   // for s=wsx-3 to wsx+3 do
   // line(s,wsy,wsx,wsy+9);
-// end;
+// };
 // {==============================================================================}
 // procedure wezel(wsx,wsy:integer);
-  // begin
+  // {
   // setfillstyle(1,1);
   // fillellipse(wsx,wsy,2,2);
-// end;
+// };
 // {===================================================================================================}
 // procedure lamp_wsk(wsx,wsy,wyb:integer);{PROCEDURA RYSUJACA ZESTAW LAMPEK SYGNALIZACYJNCH}
 // var q,a,d:integer;
- // begin
+ // {
   // setcolor(3);
   // line(wsx,wsy,wsx+24,wsy);
   // line(wsx,wsy+34,wsx+24,wsy+34);
@@ -163,20 +163,20 @@
 // 7:floodfill(wsx+14,wsy+16,3);
 // 8:floodfill(wsx+14,wsy+22,3);
 // 9:floodfill(wsx+14,wsy+28,3);
-// end;
+// };
 // setcolor(3);
- // end;
+ // };
 // {===============================================================================}
 // procedure przeklad(wsx,wsy:word);{PROCEDURA RYSUJANCA PRZEKLADNIK }
- // begin
+ // {
  // setcolor(3);
  // circle(wsx,wsy+8,7);
- // arc(wsx,wsy+8,0,180,10);end;
+ // arc(wsx,wsy+8,0,180,10);};
 // {=================================================================================}
 // procedure pol_pom1  {PROCEDURA RYSUJACA CALE POLE POMIAROWE NR 9}
 // (wsx,wsy,lon1,lon2,syg3,syg4,syg6,syg7,syg8,wyb:integer;ls5:boolean);
  // var m,n:integer;
-  // begin
+  // {
   // miernik(wsx+55,wsy+20,4,"MW",true);
   // miernik(wsx+55,wsy+44,4,"Mvar",true);
   // miernik(wsx+55,wsy+68,4,"kV",true);
@@ -208,12 +208,12 @@
     // outtextxy(wsx+108,wsy+87,"48");outtextxy(wsx+64,wsy+119,"12");
     // outtextxy(wsx+90,wsy+60,"LV");
     // outtextxy(wsx+10,wsy+195,"LS");
-// end;
+// };
 // {================================================================================}
 // procedure pol_pom2   {PROCEDURA RYSUJACA CALE POLE POMIAROWE NR 15}
  // (wsx,wsy,lon1,lon2,lon3,lon4,syg1,syg2,syg3,syg4,syg5,syg6,syg7,syg8,syg9,syg10:integer;syg11,syg12:boolean);
  // var m,n:integer;
-  // begin setcolor(3);
+  // { setcolor(3);
   // settextstyle(smallfont,horizdir,4);
   // pisz(wsx+40,wsy+5,"GUMIENqCE");outtextxy(20,119,"110kV");
   // lamp_wsk(wsx+130,wsy+285,4);
@@ -262,12 +262,12 @@
    // sygnal(wsx+260,wsy+305,syg8,true);line(wsx+235,wsy+285,wsx+260,wsy+285);line(wsx+260,wsy+285,wsx+260,wsy+297);
    // uziemienie(wsx+260,wsy+312);glowica(wsx+235,wsy+318);
     // lamp_wsk(wsx+180,wsy+285,4);
- // end;
+ // };
 // {================================================================================================================}
 // procedure pol_pom3  {PROCEDURA RYSUJACA CALE POLE POMIAROWE NR 16}
 // (wsx,wsy,lon1,lon2,syg3,syg4,syg6,syg7,syg8,syg9,syg10,syg11,syg12,syg14:word;ls1,ls2:boolean);
  // var m,n:integer;
-  // begin
+  // {
    // setcolor(3);
    // settextstyle(smallfont,horizdir,4);
   // outtextxy(wsx+40,wsy+5,"GLINKI 2");
@@ -322,12 +322,12 @@
     // outtextxy(wsx+104,wsy+87,"48");outtextxy(wsx+60,wsy+119,"12");
     // outtextxy(wsx+280,wsy+119,"110kV");outtextxy(wsx+85,wsy+60,"LV");
     // outtextxy(wsx+10,wsy+195,"LS");
-   // lamp_wsk(wsx+180,wsy+285,4);end;
+   // lamp_wsk(wsx+180,wsy+285,4);};
 // {=================================================================================}
 // procedure pol_pom4 {PROCEDURARYSUJACA POLE POOMIAROWE  NR 8}
 // (wsx,wsy,polw,lon1,lon2,lon3,syg1,syg2,syg3,syg4,syg5,syg6,syg7,syg8,syg9:integer;syg10:boolean);
 // var kat:word;
- // begin
+ // {
    // setcolor(3);
    // settextstyle(smallfont,horizdir,4);
    // pisz(wsx+60,wsy+5,"TRANSFORMATOR TROqJUZWOJENIOWY eT1");
@@ -378,7 +378,7 @@
    // outtextxy(wsx+209,wsy+272,"3");
     // rectangle(wsx+180,wsy+290,wsx+201,wsy+300);
   // case polw of
-    // 0:begin
+    // 0:{
   // setcolor(0);
    // kat=315;line(wsx+188,wsy+285,wsx+183,wsy+292);line(wsx+192,wsy+287,wsx+183,wsy+292);
      // arc(wsx+191,wsy+285,kat,kat+180,3);
@@ -387,8 +387,8 @@
   // setcolor(3);
     // rectangle(wsx+180,wsy+290,wsx+201,wsy+300);
     // kat=0;line(wsx+188,wsy+296,wsx+191,wsy+303);line(wsx+194,wsy+296,wsx+191,wsy+303);
-     // arc(wsx+191,wsy+295,kat,kat+180,3);end;
-   // 1:begin
+     // arc(wsx+191,wsy+295,kat,kat+180,3);};
+   // 1:{
   // setcolor(0);
    // kat=0;line(wsx+188,wsy+296,wsx+191,wsy+303);line(wsx+194,wsy+296,wsx+191,wsy+303);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
@@ -398,23 +398,23 @@
    // rectangle(wsx+180,wsy+290,wsx+201,wsy+300);
    // kat=315;line(wsx+188,wsy+295,wsx+183,wsy+302);line(wsx+192,wsy+297,wsx+183,wsy+302);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
-     // end;
-   // 2:begin setcolor(0);
+     // };
+   // 2:{ setcolor(0);
      // kat=0;line(wsx+188,wsy+296,wsx+191,wsy+303);
    // line(wsx+194,wsy+296,wsx+191,wsy+303);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
     // kat=315;line(wsx+188,wsy+295,wsx+183,wsy+302);line(wsx+192,wsy+297,wsx+183,wsy+302);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
    // setcolor(3);kat=45;line(wsx+190,wsy+297,wsx+199,wsy+302);line(wsx+194,wsy+295,wsx+199,wsy+302);
-     // arc(wsx+191,wsy+295,kat,kat+180,3);rectangle(wsx+180,wsy+290,wsx+201,wsy+300)end;
-  // end;
+     // arc(wsx+191,wsy+295,kat,kat+180,3);rectangle(wsx+180,wsy+290,wsx+201,wsy+300)};
+  // };
   // outtextxy(wsx+157,wsy+287,"LHz");
-   // end;
+   // };
 // {=================================================================================}
 // procedure pol_pom5       {PROCEDURA RYSUJACA POLE POMIAROWE NR 10, POLE GENERATORA I }
 // (wsx,wsy,syg1,syg2,syg3,syg5,syg6,syg7,syg8:integer;ls4:boolean;numgener:string);
 // var a:integer;
-// begin
+// {
    // setcolor(3);
    // settextstyle(smallfont,horizdir,4);
    // outtextxy(wsx+140,wsy+15,numgener);
@@ -458,11 +458,11 @@
    // sygnal(wsx+70,wsy+298,syg6,true);line(wsx+70,wsy+306,wsx+70,wsy+320);
    // wezel(wsx+70,wsy+320);line(wsx+50,wsy+320,wsx+90,wsy+320);line(wsx+50,wsy+321,wsx+90,wsy+321);
    // outtextxy(wsx+48,wsy+308,"6kV");
-// end;
+// };
 // {=================================================================================}
 // procedure pol_pom6  {PROCEDURA RYSUJACA POLE POMIAROWE NR 9}
 // (wsx,wsy,syg1,syg2,syg3,lon1:integer;ls1:boolean);
-// begin
+// {
    // setcolor(3);
    // settextstyle(smallfont,horizdir,4);
    // pisz(wsx+130,wsy+5,"SPRZEaGLlO");
@@ -487,11 +487,11 @@
    // line(wsx+90,wsy+253,wsx+90,wsy+280);
    // line(wsx+50,wsy+280,wsx+90,wsy+280);
    // lamp_wsk(wsx+100,wsy+285,11);
-// end;
+// };
 // {=======================================================================================}
 // procedure pol_pom7
 // (wsx,wsy,lon1,lon2,syg1,syg2,syg3,syg4,syg5:integer;syg6:boolean);
-// begin
+// {
   // settextstyle(smallfont,horizdir,4);outtextxy(wsx+130,wsy+5,"MORZYCZYN");
    // line(wsx,wsy+130,wsx+getmaxx div 2,wsy+130);
    // line(wsx,wsy+131,wsx+getmaxx div 2,wsy+131);
@@ -517,10 +517,10 @@
    // sygnal(wsx+260,wsy+305,syg5,true);line(wsx+235,wsy+285,wsx+260,wsy+285);line(wsx+260,wsy+285,wsx+260,wsy+297);
    // uziemienie(wsx+260,wsy+312);glowica(wsx+235,wsy+318);
     // lamp_wsk(wsx+180,wsy+285,4);
- // end;
+ // };
 
 // procedure trafoet2(wlacz,ktoral:integer;lampw:boolean);
-// begin
+// {
     // setcolor(3);
     // settextstyle(smallfont,horizdir,4);
     // pisz(130,5," TRANSFORMATOR TROqJUZWOJENIOWY ");
@@ -551,10 +551,10 @@
     // outtextxy(210,195,"LS");
     // outtextxy(280,119,"110kV");
     // lamp_wsk(180,285,ktoral);
-   // end;
+   // };
 
 // procedure trafoet1(sygn:integer);
-// begin
+// {
   // setcolor(3);
   // pisz(400,5," TRANSFORMATOR TROqJUZWOJENIOWY ");
   // outtextxy(490,15,"eT1");
@@ -584,65 +584,65 @@
     // outtextxy(530,195,"LS");
     // outtextxy(600,119,"110kV");
     // lamp_wsk(500,285,10);
-// end;
+// };
 
 // procedure ekran2;
-// begin
-// if nrekranu<>2 then begin
+// {
+// if nrekranu<>2 then {
 // clearviewport;
 // pol_pom5(0,-10,1,0,1,0,1,1,1,false,"GENERATOR I");
 // pol_pom5(320,-10,0,1,1,0,1,0,1,false,"GENERATOR II");
-// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,109,"110kV");end;
+// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,109,"110kV");};
 // nrekranu=2;
-// end;
+// };
 
 // procedure ekran1;
-// begin
-// if nrekranu<>1 then begin
+// {
+// if nrekranu<>1 then {
 // clearviewport;
 // pol_pom4(0,0,0,0,0,0,1,0,1,1,0,1,1,0,0,false);
 // pol_pom1(320,0,1,1,0,1,1,1,0,5,false);
-// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,"110kV");end;
+// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,"110kV");};
 // nrekranu=1;
-// end;
+// };
 
 // procedure ekran3;
-// begin
-// if nrekranu<>3 then begin
+// {
+// if nrekranu<>3 then {
 // clearviewport;
 // pol_pom2(0,0,1,0,1,0,1,1,1,0,1,1,1,0,1,0,false,false);
 // pol_pom3(320,0,0,1,0,1,1,1,0,0,1,1,0,1,false,false);
 
-// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,"110kV");END;
+// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,"110kV");};
 // nrekranu=3;
-// end;
+// };
 
 // procedure ekran4;
-// begin
-// if nrekranu<>4 then begin
+// {
+// if nrekranu<>4 then {
 // clearviewport;
 // pol_pom6(0,0,1,1,1,1,false);
 // pol_pom7(320,0,1,1,0,1,1,1,0,false);
-// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,"110kV");END;
+// line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,"110kV");};
 // nrekranu=4;
-// end;
+// };
 
 // procedure spr_klaw;
 // var a:char;
-// begin
+// {
 // a=readkey;
  // case a of
  // "1":ekran1;
  // "2":ekran2;
  // "3":ekran3;
  // "4":ekran4;
- // end;
-// end;
+ // };
+// };
 
 // procedure obwodka(prx1,pry1,prx2,pry2,color:integer);
 // var  p:pointer;
   // size:word;
- // begin
+ // {
   // size=imagesize(prx1,pry1,prx2,pry2);
   // getmem(p,size);
   // getimage(prx1,pry1,prx2,pry2,p^);
@@ -651,57 +651,57 @@
   // setcolor(15);
   // putimage(prx1,pry1,p^,andput);
   // freemem(p,size);
-  // end;
+  // };
 
 // procedure obwodka1(prx1,pry1,prx2,pry2,color:integer);
 // var  p:pointer;
   // size:word;
- // begin
+ // {
   // setfillstyle(1,color);
   // bar(prx1,pry1,prx2,pry2);
   // setcolor(15);
-  // end;
+  // };
 
 // procedure strzal(wsx,wsy:integer);
-// begin
+// {
 // line(wsx,wsy,wsx,wsy+6);
 // line(wsx-3,wsy+3,wsx,wsy);
 // line(wsx+3,wsy+3,wsx,wsy);
 // line(wsx+10,wsy,wsx+10,wsy+6);
 // line(wsx+7,wsy+3,wsx+10,wsy+6);
 // line(wsx+13,wsy+3,wsx+10,wsy+6);
-// end;
+// };
 // procedure delta(wsx,wsy:integer);
-// begin
+// {
 // line(wsx,wsy,wsx+9,wsy);
 // line(wsx,wsy,wsx+5,wsy-5);
 // line(wsx+5,wsy-5,wsx+10,wsy);
-// end;
+// };
 // procedure ram(wsx,wsy:integer);
-// begin
+// {
 // line(wsx,wsy,wsx+44,wsy);line(wsx+2,wsy+2,wsx+42,wsy+2);
 // line(wsx+44,wsy,wsx+44,wsy+79);line(wsx+42,wsy+2,wsx+42,wsy+77);
 // line(wsx,wsy,wsx,wsy+79);line(wsx+2,wsy+2,wsx+2,wsy+77);
 // line(wsx,wsy+79,wsx+44,wsy+79);line(wsx+2,wsy+77,wsx+42,wsy+77);
 // line(wsx+22,wsy+2,wsx+22,wsy+77);
-// for a=0 to 3 do begin
-// line(wsx+2,wsy+17+a*15,wsx+42,wsy+17+a*15);end;
+// for a=0 to 3 do {
+// line(wsx+2,wsy+17+a*15,wsx+42,wsy+17+a*15);};
 // settextstyle(defaultfont,horizdir,1);
 // delta(wsx+8,wsy+12);outtextxy(wsx+29,wsy+7,"D");
 // outtextxy(wsx+9,wsy+22,"2");outtextxy(wsx+29,wsy+22,"R");
 // outtextxy(wsx+9,wsy+37,"3");outtextxy(wsx+29,wsy+37,"S");
 // outtextxy(wsx+9,wsy+52,"W");outtextxy(wsx+29,wsy+52,"T");
 // outtextxy(wsx+9,wsy+67,"H");outtextxy(wsx+29,wsy+67,"E");
-// end;
+// };
 // procedure ryspol1;
-// begin
+// {
  // pol_pom1(0,0,1,1,0,1,1,1,0,6,true);
  // setfillstyle(0,0);
  // bar (320,0,getmaxx,getmaxy);
  // setcolor(15);
-// end;
+// };
 // procedure zespollampek;
-// begin
+// {
    // pisz(350,10,"ZESPOqLl LAMPEK SYNALIZUJAaCYCH STANY");
    // pisz(350,20,"AWARYJNE NA LINII");
    // delta(360,49);pisz(375,40,"-SYGNALIZACJA ZWARCIA MIEDZYFAZOWEGO ;");
@@ -718,12 +718,12 @@
    // pisz(363,190,"E -SYGNALIZACJA WYSTAaPIENIA NIEUDANEGO");
    // pisz(380,200,"CYKLU SPZ ;");
    // ram(350,260);
-// end;
+// };
 
 // procedure demo1;
 // var a,z,x:word;b,s:char;k:boolean;
-// begin
-// if a <> 1 then begin
+// {
+// if a <> 1 then {
 // clearviewport;z=11;k=false;
 // setcolor(3);pol_pom1(0,0,1,1,0,1,1,1,0,7,true);
 // setcolor(15);outtextxy(350,50,"W CELU UZYSKANIA INFORMACJI NA TEMAT POLA");
@@ -731,80 +731,80 @@
 // outtextxy(350,74,"LUB ENTER DLA KONTYNUACJI");
 // repeat
 // b=readkey;
-// if ord(b)<>0 then begin
+// if ord(b)<>0 then {
 // if k=true then z=x;
-// if b=#72 then begin z=z-1;x=z;k=false;end;
-// if b=#80 then begin z=z+1;x=z;k=false;end;
-// if b<>#80 then begin
-// if b<>#72 then begin z=50+z;k=true;end;end;
+// if b=#72 then { z=z-1;x=z;k=false;};
+// if b=#80 then { z=z+1;x=z;k=false;};
+// if b<>#80 then {
+// if b<>#72 then { z=50+z;k=true;};};
 // if z=100 then z=50;
 // if z=0 then z=11;
 // if z=12 then z=1;
-// if z=1 then begin;
+// if z=1 then {;
    // ryspol1;obwodka(48,14,89,95,cr1);
    // pisz(350,20,"MIERNIKI PARAMETROqW ENERGII PRZEPLlYWAJAaCEJ");
    // pisz(350,30,"PRZEZ TO POLE POMIAROWE");
-   // end;
-// if z=2 then begin;
+   // };
+// if z=2 then {;
    // ryspol1;obwodka(88,63,131,97,cr1);
    // pisz(370,64,"PRZELlAaCZNIK WOLTOMIERZOWY");
-   // END;
-// if z=3 then begin;
+   // };
+// if z=3 then {;
    // ryspol1;obwodka(50,96,87,128,cr1);
    // pisz(360,96,"LlAaCZNIK WYLlAaCZAJAaCY AUTOMATYKEa SPZ");
-   // END;
-// if z=4 then begin;
+   // };
+// if z=4 then {;
    // ryspol1;obwodka(38,159,63,171,cr1);obwodka(78,159,103,171,cr1);
    // pisz(360,156,"SYGNALIZATORY POLOZzENIA STYKOqW ODLlAaCZNIKOqW");
    // pisz(360,166,"ZAPEWNIAJAaCYCH PRACEa W I LUB II SYSTEMIE SZYN");
-   // end;
-// if z=5 then begin;
+   // };
+// if z=5 then {;
    // ryspol1;obwodka(56,198,84,212,cr1);
    // pisz(380,195,"WYLlAaCZNIK GLOqWNY TEGO POLA");
-   // end;
-// if z=6 then begin;
+   // };
+// if z=6 then {;
    // ryspol1;obwodka(91,195,136,215,cr1);
    // pisz(380,195,"STACYJKA BLOKUJAaCA REaCZNE URUCHOMIENIE");
    // pisz(380,205,"NAPEaDU WYLlAaCZNIKA");
-   // END;
-// if z=7 then begin;
+   // };
+// if z=7 then {;
    // ryspol1;obwodka(10,195,54,219,cr1);
    // pisz(380,195,"LAMPKA SYGNALIZUJAaCA UZBRAJANIE");
    // pisz(380,205,"NAPEaDU WYLlAaCZNIKA");
-   // END;
-// if z=8 then begin;
+   // };
+// if z=8 then {;
    // ryspol1;obwodka(50,228,91,252,cr1);
    // pisz(380,225,"MIERNIK PRAaDU PRZESYLlANEGO PRZEZ TO POLE");
-   // END;
-// if z=9 then begin;
+   // };
+// if z=9 then {;
    // ryspol1;obwodka(58,264,82,276,cr1);
    // pisz(380,262,"ODLlAaCZNIK ODCINAJAaCY LINIEa");
-   // end;
-// if z=10 then begin;
+   // };
+// if z=10 then {;
    // ryspol1;obwodka(90,298,120,312,cr1);
    // pisz(380,295,"WYLlAaCZNIK UZIEMIAJAaCY LINIEa");
-   // END;
-// if z=11 then begin;
+   // };
+// if z=11 then {;
    // ryspol1;obwodka(143,280,180,323,cr1);
    // zespollampek
-   // END;
-// end;
+   // };
+// };
    // until (b=#13) or (b=#27);
    // if b=#27 then uciec=1;
 
-// end;a=1;end;
+// };a=1;};
 // {=================================================================================}
 // procedure ryspol2;
-// begin
+// {
 // pol_pom3(0,0,0,1,0,1,1,1,0,1,0,1,0,1,true,true);
  // setfillstyle(0,0);
  // bar (320,0,getmaxx,getmaxy);
  // setcolor(15);
-// end;
+// };
 // procedure demo2;
 // var a,z,x:word;b,s:char;k:boolean;
-// begin
-// if a <> 2 then begin
+// {
+// if a <> 2 then {
 // clearviewport;z=18;k=false;
 // pol_pom3(0,0,0,1,0,1,1,1,0,1,0,1,0,1,true,true);
 // setcolor(15);pisz(350,50,"W CELU UZYSKANIA INFORMACJI NA TEMAT POLA");
@@ -812,110 +812,110 @@
 // pisz(350,74,"LUB ENTER DLA KONTYNUACJI");
 // repeat
 // b=readkey;
-// if ord(b)<>0 then begin
+// if ord(b)<>0 then {
 // if k=true then z=x;
-// if b=#72 then begin z=z-1;x=z;k=false;end;
-// if b=#80 then begin z=z+1;x=z;k=false;end;
-// if b<>#80 then begin
-// if b<>#72 then begin z=50+z;k=true;end;end;
+// if b=#72 then { z=z-1;x=z;k=false;};
+// if b=#80 then { z=z+1;x=z;k=false;};
+// if b<>#80 then {
+// if b<>#72 then { z=50+z;k=true;};};
 // if z=100 then z=50;
 // if z=0 then z=18;
 // if z=19 then z=1;
-// if z=1 then begin;
+// if z=1 then {;
    // ryspol2;obwodka(44,14,83,95,cr1);
    // pisz(350,20,"MIERNIKI PARAMETROqW ENERGII PRZEPLlYWAJAaCEJ");
    // pisz(350,30,"PRZEZ TO POLE POMIAROWE");
-   // end;
-// if z=2 then begin;
+   // };
+// if z=2 then {;
    // ryspol2;obwodka(84,63,137,97,cr1);
    // pisz(370,64,"PRZELlAaCZNIK WOLTOMIERZOWY");
-   // END;
-// if z=3 then begin;
+   // };
+// if z=3 then {;
    // ryspol2;obwodka(50,96,87,128,cr1);
    // pisz(360,96,"LlAaCZNIK WYLlAaCZAJAaCY AUTOMATYKEa SPZ");
-   // END;
-// if z=4 then begin;
+   // };
+// if z=4 then {;
    // ryspol2;obwodka(34,159,59,171,cr1);obwodka(74,159,99,171,cr1);
    // pisz(380,156,"SYGNALIZATORY POLlOZzENIA STYKOqW ODLlAaCZNIKOqW");
    // pisz(380,166,"ZAPEWNIAJAaCYH PRACEa W I LUB II SYSTEMIE SZYN");
-   // end;
-// if z=5 then begin;
+   // };
+// if z=5 then {;
    // ryspol2;obwodka(52,198,80,212,cr1);
    // pisz(380,195,"WYLlAaCZNIK GLlOqWNY TEGO POLA");
-   // end;
-// if z=6 then begin;
+   // };
+// if z=6 then {;
    // ryspol2;obwodka(90,195,136,215,cr1);
    // pisz(380,195,"STACYJKA BLOKUJAaCA REaCZNE URUCHOMIENIE");
    // pisz(380,205,"NAPEaDU WYLlAaCZNIKA");
-   // END;
-// if z=7 then begin;
+   // };
+// if z=7 then {;
    // ryspol2;obwodka(10,195,54,219,cr1);
    // pisz(380,195,"LAMPKA SYGNALIZUJAaCA UZBRAJANIE");
    // pisz(380,205,"NAPEaDU WYLlAaCZNIKA");
-   // END;
-// if z=8 then begin;
+   // };
+// if z=8 then {;
    // ryspol2;obwodka(50,228,91,252,cr1);
    // pisz(380,225,"MIERNIK PRAaDU PRZESYLlANEGO PRZEZ TO POLE");
-   // END;
-// if z=9 then begin;
+   // };
+// if z=9 then {;
    // ryspol2;obwodka(54,264,78,276,cr1);
    // pisz(380,262,"ODLlAaCZNIK ODCINAJAaCY LINIEa");
-   // end;
-// if z=10 then begin;
+   // };
+// if z=10 then {;
    // ryspol2;obwodka(90,298,120,312,cr1);
    // pisz(380,295,"WYLlAaCZNIK UZIEMIAJAaCY LINIEa");
-   // END;
-// if z=11 then begin;
+   // };
+// if z=11 then {;
    // ryspol2;obwodka(130,280,170,323,cr1);
    // zespollampek;
-   // END;
-// if z=12 then begin
+   // };
+// if z=12 then {
    // ryspol2;obwodka(270,159,300,171,cr1);obwodka(230,159,260,171,cr1);
    // pisz(360,156,"SYGNALIZATORY POLlOZzENIA STYKOqW ODLlAaCZNIKOqW");
    // pisz(360,166,"ZAPEWNIAJAaCYH PRACEa W I LUB II SYSTEMIE SZYN");
-   // end;
-// if z=13 then begin;
+   // };
+// if z=13 then {;
    // ryspol2;obwodka(250,198,280,212,cr1);
    // pisz(380,195,"WYLlAaCZNIK GLlOqWNY TEGO POLA");
-   // end;
-// if z=14 then begin;
+   // };
+// if z=14 then {;
    // ryspol2;obwodka(200,195,242,219,cr1);
    // pisz(380,195,"LAMPKA SYGNALIZUJAaCA UZBRAJANIE");
    // pisz(380,205,"NAPEaDU WYLlAaCZNIKA");
-   // END;
-// if z=15 then begin;
+   // };
+// if z=15 then {;
    // ryspol2;obwodka(235,228,295,252,cr1);
    // pisz(380,225,"MIERNIK PRAaDU PRZESYLlANEGO PRZEZ TO POLE");
-   // END;
-// if z=16 then begin
+   // };
+// if z=16 then {
    // ryspol2;obwodka(247,268,283,290,cr1);
    // pisz(380,265,"TRANSFORMATOR TROqJUZWOJENIOWY");
-   // end;
-// if z=17 then begin
+   // };
+// if z=17 then {
    // ryspol2;obwodka(260,307,308,321,cr1);obwodka(223,307,260,321,cr1);
    // pisz(380,300,"WYLlAaCZNIKI ZASILANIA LINII 6kV i 15kV");
-   // end;
-// if z=18 then begin
+   // };
+// if z=18 then {
    // ryspol2;obwodka(180,280,220,323,cr1);
    // zespollampek;
-   // end;
-// end;
+   // };
+// };
    // until (b=#13) or (b=#27);
    // if b=#27 then uciec=1;
 
-// end;a=2;end;
+// };a=2;};
 // {=================================================================================}
 // procedure ryspol3;
-// begin
+// {
 // setcolor(3);pol_pom5(0,-10,1,0,1,0,1,0,0,true,"GENERATOR I");
  // setfillstyle(0,0);
  // bar (320,0,getmaxx,getmaxy);
  // setcolor(15);
-// end;
+// };
 // procedure demo3;
 // var a,z,x:word;b,s:char;k:boolean;
-// begin
-// if a <> 3 then begin
+// {
+// if a <> 3 then {
 // clearviewport;z=15;k=false;
 // pol_pom5(0,-10,1,0,1,0,1,0,0,true,"GENERATOR I");
 // setcolor(15);pisz(350,50,"W CELU UZYSKANIA INFORMACJI NA TEMAT POLA");
@@ -923,100 +923,100 @@
 // pisz(350,74,"LUB ENTER DLA KONTYNUACJI");
 // repeat
 // b=readkey;
-// if ord(b)<>0 then begin
+// if ord(b)<>0 then {
 // if k=true then z=x;
-// if b=#72 then begin z=z-1;x=z;k=false;end;
-// if b=#80 then begin z=z+1;x=z;k=false;end;
-// if b<>#80 then begin
-// if b<>#72 then begin z=50+z;k=true;end;end;
+// if b=#72 then { z=z-1;x=z;k=false;};
+// if b=#80 then { z=z+1;x=z;k=false;};
+// if b<>#80 then {
+// if b<>#72 then { z=50+z;k=true;};};
 // if z=100 then z=50;
 // if z=0 then z=15;
 // if z=16 then z=1;
-// if z=1 then begin
+// if z=1 then {
    // ryspol3;obwodka(20,14,65,95,cr1);
    // pisz(350,20,"MIERNIK PRAaDU GENERATORA PO STRONIE 110kV");
    // pisz(350,80,"WARTOSqCq NAPIEaCIA WZBUDZENIA PODSTAWOWEGO");
-   // end;
-// if z=2 then begin
+   // };
+// if z=2 then {
    // ryspol3;obwodka(140,18,190,95,cr1);
    // pisz(350,20,"MIERNIKI PARAMETROqW ENERGII PRZEPLlYWAJAaCEJ");
    // pisz(350,30,"PRZEZ TO POLE POMIAROWE");
-   // end;
-// if z=3 then begin
+   // };
+// if z=3 then {
    // ryspol3;obwodka(235,18,280,95,cr1);
    // pisz(350,20,"AMPEROMIERZ PRAaDU GENERATORA PO STRONIE 6kV");
    // pisz(350,80,"WOLTOMIERZ KONTROLI KONTAKTU STYKOqW ");
    // pisz(350,91,"PRZEKAZqNIKA TIRILLA");
-   // end;
-// if z=4 then begin
+   // };
+// if z=4 then {
    // ryspol3;obwodka(130,142,150,158,cr1);obwodka(170,142,200,158,cr1);
    // pisz(350,140,"ODLlAaCZNIKI ZAPEWNIAJAaCE MOZzLIWOSqCq PRACY");
    // pisz(350,151,"W JEDNYM Z DWOqCH SYSTEMOqW SZYN");
-   // end;
-// if z=5 then begin
+   // };
+// if z=5 then {
    // ryspol3;obwodka(150,180,170,195,cr1);
    // pisz(350,180,"WYLlAaCZNIK GLlOqWNY LINII");
-   // END;
-// if z=6 then begin
+   // };
+// if z=6 then {
    // ryspol3;obwodka(110,180,145,210,cr1);
    // pisz(350,180,"LAMPKA SYGNALIZUJAaCA UZBRAJANIE");
    // pisz(350,190,"NAPEaDU WYLlAaCZNIKA");
-   // END;
-// if z=7 then begin
+   // };
+// if z=7 then {
    // ryspol3;obwodka(30,160,75,195,cr1);
    // pisz(350,180,"MIERNIK PRAaDU WZBUDZENIA PODSTAWOWEGO");
-   // END;
-// if z=8 then begin
+   // };
+// if z=8 then {
    // ryspol3;obwodka(235,160,280,195,cr1);
    // pisz(350,180,"MIERNIK NAPIEaCIA WZBUDZENIA PODSTAWOWEGO");
-   // end;
-// if z=9 then  begin
+   // };
+// if z=9 then  {
    // ryspol3;obwodka(150,209,170,232,cr1);
    // pisz(350,210,"TRANSFORMATOR DOPASOWUJAaCY NAPIEaCIE GENERATORA");
    // pisz(350,220,"DO NAPIEaCIA SIECI");
-   // END;
-// if z=10 then begin
+   // };
+// if z=10 then {
    // ryspol3;obwodka(220,225,250,240,cr1);
    // pisz(350,230,"WYLlAaCZNIK UZIEMIAJAaCY");
-   // END;
-// if z=11 then begin
+   // };
+// if z=11 then {
    // ryspol3;obwodka(129,240,200,261,cr1);
    // pisz(350,250,"MIERNIKI PRAaDU TRZECH FAZ GENERATORA");
-   // end;
-// if z=12 then begin
+   // };
+// if z=12 then {
    // ryspol3;obwodka(60,245,80,269,cr1);OBWODKA(60,281,80,295,cr1);
    // pisz(350,250,"TRANSFORMATOR 6kV WRAZ Z WYLlAaCZNIKIEM LINIOWYM");
-   // end;
-// if z=13 then begin
+   // };
+// if z=13 then {
    // ryspol3;obwodka(150,275,170,289,cr1);
    // pisz(350,270,"GENERATOR");
-   // END;
-// if z=14 then begin
+   // };
+// if z=14 then {
    // ryspol3;obwodka(120,312,140,327,cr1);obwodka(120,335,140,350,cr1);
    // pisz(350,300,"WZBUDNICA REZERWOWA WRAZ Z WYLlAaCZNIKIEM");
-   // END;
-// if z=15 then begin
+   // };
+// if z=15 then {
    // ryspol3;obwodka(180,312,200,327,cr1);obwodka(180,335,200,350,cr1);
    // pisz(350,300,"WZBUDNICA GLlOqWNA WRAZ Z WYLlAaCZNIKIEM");
-   // END;
-// END;
+   // };
+// };
    // until (b=#13) or (b=#27);
    // if b=#27 then uciec=1;
 // a=3;
-// end;END;
+// };};
 // {=====================================================================================}
 // procedure ryspol4;
-// begin
+// {
 // pol_pom4(0,0,0,0,0,0,1,0,1,1,0,1,1,0,0,true);
  // setfillstyle(0,0);
  // bar (320,0,getmaxx,getmaxy);
  // setcolor(15);
-// end;
+// };
 
 // procedure demo4;
 // var a,z,x:word;b,s:char;k:boolean;
-// begin
-// if a <> 3 then begin
+// {
+// if a <> 3 then {
 // clearviewport;z=13;k=false;
 // pol_pom4(0,0,0,0,0,0,1,0,1,1,0,1,1,0,0,true);
 // setcolor(15);pisz(350,50,"W CELU UZYSKANIA INFORMACJI NA TEMAT POLA");
@@ -1024,104 +1024,104 @@
 // pisz(350,74,"LUB ENTER DLA KONTYNUACJI");
 // repeat
 // b=readkey;
-// if ord(b)<>0 then begin
+// if ord(b)<>0 then {
 // if k=true then z=x;
-// if b=#72 then begin z=z-1;x=z;k=false;end;
-// if b=#80 then begin z=z+1;x=z;k=false;end;
-// if b<>#80 then begin
-// if b<>#72 then begin z=50+z;k=true;end;end;
+// if b=#72 then { z=z-1;x=z;k=false;};
+// if b=#80 then { z=z+1;x=z;k=false;};
+// if b<>#80 then {
+// if b<>#72 then { z=50+z;k=true;};};
 // if z=100 then z=50;
 // if z=0 then z=13;
 // if z=14 then z=1;
-// if z=8 then begin
+// if z=8 then {
    // ryspol4;obwodka(178,18,215,90,cr1);
    // pisz(350,20,"MIERNIKI PARAMETROqW ENERGII PRZESYLlANEJ");
    // pisz(350,30,"TYM POLEM");
-   // end;
-// if z=9 then begin
+   // };
+// if z=9 then {
    // ryspol4;obwodka(160,159,180,172,cr1);obwodka(200,159,220,172,cr1);
    // pisz(350,160,"ODLlAaCZNIKI PRZEKLlADNIKOW NAPIEaCIOWYCH");
    // pisz(360,170,"I i II SYSTEMU");
-   // END;
-// if z=10 then begin
+   // };
+// if z=10 then {
    // ryspol4;obwodka(130,178,160,192,cr1);obwodka(220,178,250,192,cr1);
    // pisz(350,170,"WYLlAaCZNIKI UZIEMIAJAaCE I i II SYSTEM");
-   // END;
-// if z=11 then begin
+   // };
+// if z=11 then {
    // ryspol4;obwodka(160,220,180,233,cr1);obwodka(200,220,220,233,cr1);
    // pisz(350,160,"PRZEKLlADNIKI NAPIEaCIOWE I i II SYSTEMU");
-   // END;
-// if z=12 then begin
+   // };
+// if z=12 then {
    // ryspol4;obwodka(140,240,190,270,cr1);obwodka(180,240,230,270,cr1);
    // pisz(350,250,"LlAaCZNIKI NAPIEaCIOWE I i II SYSTEMU");
-   // END;
-// if z=13 then begin
+   // };
+// if z=13 then {
    // ryspol4;obwodka(150,272,230,303,cr1);
    // pisz(350,270,"TROqJFAZOWY LlAaCZNIK CZEaSTOTLIWOSqCIOWY");
-   // END;
-// if z=1 then begin
+   // };
+// if z=1 then {
    // ryspol4;obwodka(40,85,85,120,cr1);
    // pisz(350,90,"LlAaCZNIK ZALlAaCZAJAaCY AUTOMATYKEa SPZ");
-   // END;
-// if z=2 then begin
+   // };
+// if z=2 then {
    // ryspol4;obwodka(40,159,60,171,cr1);obwodka(80,159,100,171,cr1);
    // pisz(350,160,"ODLlAaCZNIKI LlAaCZAaCE POLE Z JEDNYM Z SYSTEMOqW");
-   // END;
-// if z=3 then begin
+   // };
+// if z=3 then {
    // ryspol4;obwodka(60,198,80,212,cr1);
    // pisz(350,190,"WYLlAaCZNIK GLlOqWNY POLA");
-   // END;
-// if z=4  then begin
+   // };
+// if z=4  then {
    // ryspol4;obwodka(20,190,55,220,cr1);
    // pisz(350,180,"LAMPKA SYGNALIZUJAaCA UZBRAJANIE");
    // pisz(350,190,"NAPEaDU WYLlAaCZNIKA");
-   // END;
-// IF Z=5  THEN BEGIN
+   // };
+// IF Z=5  THEN {
    // ryspol4;obwodka(45,228,95,253,cr1);
    // pisz(350,230,"MIERNIK PRAaDU PLlYNAaCEGO PRZEZ POLE");
-   // END;
-// if z=6 then begin
+   // };
+// if z=6 then {
    // ryspol4;obwodka(52,268,88,290,cr1);
    // pisz(350,265,"TRANSFORMATOR TROqJUZWOJENIOWY");
-   // end;
-// if z=7 then begin
+   // };
+// if z=7 then {
    // ryspol4;obwodka(30,307,60,322,cr1);obwodka(90,307,110,322,cr1);
    // pisz(350,300,"WYLlAaCZNIKI LINII 6kV i 15 kV");
-   // END;
-   // end;
+   // };
+   // };
    // until (b=#13) or (b=#27);
    // if b=#27 then uciec=1;
-// end;end;
+// };};
 
 // procedure pokaz;
-// begin
+// {
 // uciec=0;
 // demo1;
 // if uciec<>1 then demo2;
 // if uciec<>1 then demo3;
 // if uciec<>1 then demo4;
-// if uciec<>1 then begin
+// if uciec<>1 then {
 // clearviewport;
 // nrekranu=0;
 // pisz(60,60,"NACISKANIE KLAWISZY 1,2,3,4 POZWALA NA OGLAaDANIE CALlYCH POqL");
 // pisz(60,72,"NACISqNIEaCIE ENTER LUB Esc SPOWODUJE POWROqT DO MENU");
 // repeat
 // ch=readkey;
-// if ord(ch)<>0 then begin;
+// if ord(ch)<>0 then {;
  // case ch of
  // "1":ekran1;
  // "2":ekran2;
  // "3":ekran4;
  // "4":ekran3;
-// END; end;
+// }; };
 // until (ch=#13) or (ch=#27);
-// end;end;
+// };};
 
 // procedure synchnap;
 // var klaw:char;
     // warnap:string;
     // warwol,wartd:byte;
-// begin
+// {
 // randomize;
 // wartd=round(random(20));
 // warwol=wartd+100;
@@ -1133,31 +1133,31 @@
   // pisz(485,62,warnap);
  // repeat
   // klaw=readkey;
-  // if ord(klaw)<>0 then begin
-  // if klaw=#72 then begin warwol=warwol+1;if warwol=131 then warwol=130; end;
-  // if klaw=#80 then begin warwol=warwol-1;if warwol=89 then warwol=90; end;
+  // if ord(klaw)<>0 then {
+  // if klaw=#72 then { warwol=warwol+1;if warwol=131 then warwol=130; };
+  // if klaw=#80 then { warwol=warwol-1;if warwol=89 then warwol=90; };
   // bar(484,63,505,71);
   // str(warwol,warnap);
   // pisz(485,62,warnap);
- // end
+ // }
   // until (klaw=#13)and(warwol=110);
- // end;
+ // };
 
 // procedure udana;
 // var czek:char;
-// begin
+// {
 // pisz(340,285,"UDANA SYNCHRONIZACJA");czek=readkey;
 // pol_pom5(0,-10,1,0,1,1,0,0,0,true,"GENERATOR I");delay(500);
 // pol_pom5(0,-10,1,0,1,1,0,0,0,false,"GENERATOR I");delay(500);
-// end;
+// };
 
 // procedure czesciowa;
 // var czek:char;
-// begin
+// {
 // pisz(340,285,"SYNCHRONIZACJA NIEDOKLlADNA,");
 // pisz(340,297,"ISTNIEJE POTRZEBA POWTOqRNEJ SYNCHRONIZACJI");
 // czek=readkey;
-// end;
+// };
 
 // procedure synchron;
 // var kat,szybkosc,cospet,kier:integer;
@@ -1168,7 +1168,7 @@
     // znak,czek:char;
 // const xsyn=495;
       // ysyn=145;
-// begin
+// {
  // xzew=465;yzew=150;szybkosc=1;kat=0;koniec=false;kier=-1;
  // setfillstyle(0,0);
  // bar (320,0,getmaxx,getmaxy);
@@ -1179,7 +1179,7 @@
    // rectangle(460,120,530,170);
    // rectangle(458,118,532,172);
    // pisz(340,246,"KLAWISZE KURSORA    - ZMIANA CZEaSTOTLIWOSqCI");strzal(444,248);
-   // pisz(340,258,"KLAWISZ END - ZAKONqCZENIE SYNCHRONIZACJI");
+   // pisz(340,258,"KLAWISZ } - ZAKONqCZENIE SYNCHRONIZACJI");
    // circle(xsyn,ysyn,30);line(465,ysyn,470,ysyn);
    // setwritemode(copyput);
    // repeat
@@ -1188,7 +1188,7 @@
     // if kat=-720 then kat=0;
     // regs.ah=$0b;
     // intr($21,regs);
-   // if regs.al<>0 then begin
+   // if regs.al<>0 then {
     // regs.ah=$10;
     // intr($16,regs);
     // if regs.ah=72 then szybkosc=szybkosc+(1*kier);
@@ -1198,7 +1198,7 @@
     // if szybkosc=50 then szybkosc=100;
     // if szybkosc=99 then szybkosc=49;
     // if szybkosc=101 then kier=kier*-1
-   // end;
+   // };
    // delay(szybkosc);
    // setcolor(0);
    // line(xsyn,ysyn,xzew,yzew);
@@ -1210,14 +1210,14 @@
    // until koniec;
    // if ((kat>350)and(kat<370))or((kat<-350)and(kat>-370)) then udana
        // else if((kat>330)and(kat<390))or((kat<-330)and(kat>-390)) then czesciowa
-       // else begin pisz(340,285,"NIEUDANA SYNCHRONIZACJA");
+       // else { pisz(340,285,"NIEUDANA SYNCHRONIZACJA");
          // pisz(340,297,"SPROqBUJ POWTOqRZYCq SYNCHRONIZACJEa");
          // pisz(340,309,"JEDNAK PAMIETAJ ZzE W RZECZYWISTOSqCI");
-         // pisz(340,321,"NIE WSZYSTKO DA SIEa POWTOqRZYCq");czek=readkey;end;
-// end;
+         // pisz(340,321,"NIE WSZYSTKO DA SIEa POWTOqRZYCq");czek=readkey;};
+// };
 
 // procedure beep;
-// begin
+// {
 // sound(1500);
 // delay(300);
 // bar(18,10,296,90);
@@ -1229,14 +1229,14 @@
 // pisz(20,62,"KLAWISZ Esc WYJSqCIE Z PROGRAMU");
 // pisz(20,74,"LUB POWROqT DO GLlOqWNEGO MENU");
 // nosound;
-// end;
+// };
 
 
 // procedure napis1;
 // var p:pointer;
  // size:word;
  // a:char;
-// begin
+// {
  // delay(500);
  // size=imagesize(100,100,312,180);
  // getmem(p,size);
@@ -1257,11 +1257,11 @@
   // a=readkey;
  // putimage(100,100,p^,normalput);
  // freemem(p,size);
-// end;
+// };
 
 // procedure napis2;
 // var a:char;
-// begin
+// {
  // delay(500);
  // settextstyle(2,0,4);
  // setfillstyle(1,1);
@@ -1276,11 +1276,11 @@
  // PISZ(115,210,"NACISqNIJ DOWOLNY KLAWISZ");
  // repeat until keypressed;
  // a=readkey;
-// end;
+// };
 
 
 // procedure wsk_mier_g1 (wsx,wsy:integer);
-// begin
+// {
   // pisz(wsx+30,wsy+20," 1,1");
   // pisz(wsx+28,wsy+68," 60,2");
   // pisz(wsx+240,wsy+20," 200");
@@ -1293,10 +1293,10 @@
   // pisz(wsx+146,wsy+241," 2,5");
   // pisz(wsx+125,wsy+241," 2,5");
   // pisz(wsx+168,wsy+241," 2,5");
-// end;
+// };
 
 // procedure pokaz2;
-// begin
+// {
 // clearviewport;
 // pol_pom5(0,-10,1,0,1,1,0,0,0,false,"GENERATOR I");
 // pol_pom5(320,-10,0,1,1,1,0,0,0,false,"GENERATOR II");
@@ -1315,11 +1315,11 @@
 // pol_pom5(0,-10,1,0,0,1,0,0,0,false,"GENERATOR I");
 // wsk_mier_g1(0,0);
 // SYNCHRON;
-// end;
+// };
 
 // procedure pokaz3;
 // var a:char;
-// begin
+// {
 // clearviewport;
 // pol_pom1(0,0,1,1,0,1,1,1,0,10,false);pol_pom6(320,0,0,1,1,1,false);
 // delay(1500);
@@ -1341,11 +1341,11 @@
 // delay(1000);
 // setcolor(15);
 // A=READKEY;
-// end;
+// };
 
 // procedure pokaz4;
 // var a:char;
-// begin
+// {
 // clearviewport;
 // pol_pom1(0,0,1,1,0,1,1,1,0,10,false);pol_pom6(320,0,0,1,1,1,false);delay(1000);
 // pol_pom1(0,0,1,1,0,1,0,1,0,10,true);delay(500);
@@ -1367,11 +1367,11 @@
 // delay(1000);
 // setcolor(15);
 // A=READKEY;
-// end;
+// };
 
 // procedure pokaz5;
 // var a:char;
-// begin
+// {
 // clearviewport;
 // trafoet1(0);
 // trafoet2(1,10,false);delay(2000);
@@ -1395,11 +1395,11 @@
 // delay(1000);
 // setcolor(15);
 // A=READKEY;
-// end;
+// };
 
 // procedure pokaz6;
 // var a:char;
-// begin
+// {
 // clearviewport;
 // pol_pom1(0,0,1,1,0,1,1,1,0,1,true);pol_pom6(320,0,0,1,1,1,false);
 // setfillstyle(1,11);
@@ -1414,11 +1414,11 @@
 // delay(1000);
 // setcolor(15);
 // A=READKEY;
-// end;
+// };
 
 // procedure pokaz7;
 // var a:char;
-// begin
+// {
 // clearviewport;
 // pol_pom1(0,0,1,1,0,1,1,1,0,2,true);pol_pom6(320,0,0,1,1,1,false);
 // setfillstyle(1,11);
@@ -1433,11 +1433,11 @@
 // delay(1000);
 // setcolor(15);
 // A=READKEY;
-// end;
+// };
 
 // procedure informacja;
 // var a:char;
-// begin
+// {
 // clearviewport;
 // line(0,60,getmaxx,60);
 // line(8,68,getmaxx-8,68);
@@ -1458,10 +1458,10 @@
 // pisz(72,167,"W GLlOqWNYM MENU POWODUJE WYJSqIE Z PROGRAMU.");
 // pisz(240,265,"NACISqNIJ DOWOLNY KLAWISZ");
 // a=readkey;
-// end;
+// };
 
 // procedure ry;
-// begin
+// {
 // setfillstyle(1,11);
  // bar(130,100,400,170);
  // setcolor(0);
@@ -1469,11 +1469,11 @@
  // PISZ(140,130,"DEMONSTRACJA ELEMENTOqW POqL POMIAROWYCH");
  // PISZ(140,141,"SYMULACJA  STANOqW  AWARYJNYCH");
  // PISZ(140,152,"KROqTKA INFORMACJA O PROGRAMIE");
-// end;
+// };
 
  // procedure losowanie_awarii;
 // var nrawarii:byte;
-// begin
+// {
 // repeat
 // nrawarii=random(6);
 // until nrawarii<>starynr;
@@ -1485,20 +1485,20 @@
 // 3:pokaz5;
 // 4:pokaz6;
 // 5:POKAZ7;
-// end;
-// end;
+// };
+// };
 
 // procedure odleglosc;
 // var nr2:byte;
-// begin
+// {
  // nr2=random(2);
  // case nr2 of
  // 0:pokaz6;
  // 1:pokaz7;
- // end;
-// end;
+ // };
+// };
 // procedure np;
-// begin
+// {
  // setfillstyle(1,11);
  // bar(130,100,400,170);
  // bar(130,170,400,180);
@@ -1509,11 +1509,11 @@
  // pisz(140,146,"ZABEZPIECZENIA ODLEGLlOSqIOWE");
  // pisz(140,158,"ZWARCIE NA TRANSFORMATORZE");
  // pisz(140,170,"SYNCHRONIZACJA GENERATORA");
-// end;
+// };
 
 // procedure wybor_awarii;
 // var q:char;
-// begin
+// {
 // repeat
  // clearviewport;
  // settextstyle(2,0,4);
@@ -1539,17 +1539,17 @@
  // pisz(140,170,"SYNCHRONIZACJA GENERATORA");
  // q=readkey;
  // setfillstyle(1,7);
- // if ord(q)<>0 then begin
+ // if ord(q)<>0 then {
  // if q=#80 then n1=n1+1 else if q=#72 then n1=n1-1 else if (q<>#13) and (q<>#27) then beep;
  // if n1=7 then n1=1;
  // if n1=0 then n1=6;
- // if n1=1 then begin np;obwodka1(130,109,400,121,3);end;
- // if n1=2 then begin np;obwodka1(130,121,400,133,3);end;
- // if n1=3 then begin np;obwodka1(130,133,400,145,3);end;
- // if n1=4 then begin np;obwodka1(130,145,400,157,3);end;
- // if n1=5 then begin np;obwodka1(130,157,400,169,3);end;
- // if n1=6 then begin np;obwodka1(130,169,400,180,3);end;
- // end;
+ // if n1=1 then { np;obwodka1(130,109,400,121,3);};
+ // if n1=2 then { np;obwodka1(130,121,400,133,3);};
+ // if n1=3 then { np;obwodka1(130,133,400,145,3);};
+ // if n1=4 then { np;obwodka1(130,145,400,157,3);};
+ // if n1=5 then { np;obwodka1(130,157,400,169,3);};
+ // if n1=6 then { np;obwodka1(130,169,400,180,3);};
+ // };
   // setfillstyle(1,11);
   // until (q=#13) or (q=#27);
    // if q=#27 then n1=8;
@@ -1560,27 +1560,27 @@
 // 4:odleglosc;
 // 5:pokaz5;
 // 6:pokaz2;
-// else begin end;
-// end;
+// else { };
+// };
 // until n1=8
-// end;
+// };
 
 // procedure pytanie;
 // var klawis:char;
-// begin
+// {
   // setcolor(15);
   // pisz(30,300,"JESTESq PEWNY ZzE CHCESZ WYJSqCq Z PROGRAMU? TAK(ENTER/Esc/T)  NIE(INNE KLAWISZE)");
   // klawis=readkey;
-// if (klawis=#27) or (klawis=#13) or (klawis="T") or (klawis="t") then begin
+// if (klawis=#27) or (klawis=#13) or (klawis="T") or (klawis="t") then {
    // clearviewport;
    // closegraph;
    // halt(1);
-   // end else begin setfillstyle(0,0);bar(20,300,532,320);end;
-// end;
+   // } else { setfillstyle(0,0);bar(20,300,532,320);};
+// };
 
 // procedure napis;
 // var q:char;n,m:integer;
-// begin
+// {
  // clearviewport;
  // settextstyle(2,0,4);
  // n=1;
@@ -1600,27 +1600,27 @@
  // q=readkey;
  // if q=#27 then pytanie;
  // setfillstyle(1,7);
- // if ord(q)<>0 then begin
+ // if ord(q)<>0 then {
  // if q=#80 then n=N+1 else if q=#72 then n=n-1 else if (q<>#13)and(q<>#27) then beep;
  // if n=4 then n=1;
  // if n=0 then n=3;
- // if n=1 then begin ry;obwodka1(130,130,400,141,3);end;
- // if n=2 then begin ry;obwodka1(130,142,400,152,3);end;
- // if n=3 then begin ry;obwodka1(130,151,400,163,3);end;
- // end; setfillstyle(1,11);
+ // if n=1 then { ry;obwodka1(130,130,400,141,3);};
+ // if n=2 then { ry;obwodka1(130,142,400,152,3);};
+ // if n=3 then { ry;obwodka1(130,151,400,163,3);};
+ // }; setfillstyle(1,11);
   // until q=#13;
   // case n of
 // 1:pokaz;
-// 2:begin n1=1;wybor_awarii;end;
+// 2:{ n1=1;wybor_awarii;};
 // 3:informacja;
-// end
-// end;
+// }
+// };
 
 
-// begin
+// {
    // n=vgamed;m=vga;initgraph(m,n,"c:\turbo\");
  //starynr=0;cr1=14;
 // clearviewport;
 // repeat NAPIS until false;
 // closegraph;
-// end.
+// }.
