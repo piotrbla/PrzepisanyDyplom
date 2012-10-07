@@ -27,15 +27,15 @@
 // var c:integer;
 // znakp:string;
 // begin
- // c:=length(napis);
- // for i:=1 to c do
+ // c=length(napis);
+ // for i=1 to c do
   // begin
-   // znakp:=copy(napis,i,1);
+   // znakp=copy(napis,i,1);
    // if znakp='q' then pzcoz(wsx-3,wsy+1) else
    // if znakp='l' then pzl(wsx-7,wsy+8) else
    // if znakp='z' then pzz(wsx-3,wsy+0) else
    // if znakp='a' then pzae(wsx-2,wsy+10) else
-   // begin outtextxy(wsx,wsy,znakp);wsx:=wsx+6;end;
+   // begin outtextxy(wsx,wsy,znakp);wsx=wsx+6;end;
   // end;
  // end;
 // {====================================================================================}
@@ -80,7 +80,7 @@
   // floodfill(wsx,wsy,3);
   // circle(wsx,wsy,13);
   // setcolor(3);
-  // kat:=(45*pos);
+  // kat=(45*pos);
   // arc(wsx,wsy,kat,kat+180,3);
   // case pos of
    // 0:begin line(wsx-3,wsy,wsx,wsy+7);line(wsx+3,wsy,wsx,wsy+7);end;
@@ -126,7 +126,7 @@
 // procedure glowica(wsx,wsy:integer);{procodura rysujaca glowice kablowa}
 // var s:integer;
 // begin
-  // for s:=wsx-3 to wsx+3 do
+  // for s=wsx-3 to wsx+3 do
   // line(s,wsy,wsx,wsy+9);
 // end;
 // {==============================================================================}
@@ -148,7 +148,7 @@
  // line(wsx+2,wsy+32,wsx+22,wsy+32);
  // line(wsx+2,wsy+2,wsx+2,wsy+32);
  // line(wsx+22,wsy+2,wsx+22,wsy+32);
- // for a:=1 to 5 do
+ // for a=1 to 5 do
  // line(wsx+2,wsy+2+6*a,wsx+22,wsy+2+6*a);
  // line(wsx+12,wsy+2,wsx+12,wsy+32);
    // setfillstyle(6,2);
@@ -380,32 +380,32 @@
   // case polw of
     // 0:begin
   // setcolor(0);
-   // kat:=315;line(wsx+188,wsy+285,wsx+183,wsy+292);line(wsx+192,wsy+287,wsx+183,wsy+292);
+   // kat=315;line(wsx+188,wsy+285,wsx+183,wsy+292);line(wsx+192,wsy+287,wsx+183,wsy+292);
      // arc(wsx+191,wsy+285,kat,kat+180,3);
-   // kat:=45;line(wsx+190,wsy+297,wsx+199,wsy+302);line(wsx+194,wsy+295,wsx+199,wsy+302);
+   // kat=45;line(wsx+190,wsy+297,wsx+199,wsy+302);line(wsx+194,wsy+295,wsx+199,wsy+302);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
   // setcolor(3);
     // rectangle(wsx+180,wsy+290,wsx+201,wsy+300);
-    // kat:=0;line(wsx+188,wsy+296,wsx+191,wsy+303);line(wsx+194,wsy+296,wsx+191,wsy+303);
+    // kat=0;line(wsx+188,wsy+296,wsx+191,wsy+303);line(wsx+194,wsy+296,wsx+191,wsy+303);
      // arc(wsx+191,wsy+295,kat,kat+180,3);end;
    // 1:begin
   // setcolor(0);
-   // kat:=0;line(wsx+188,wsy+296,wsx+191,wsy+303);line(wsx+194,wsy+296,wsx+191,wsy+303);
+   // kat=0;line(wsx+188,wsy+296,wsx+191,wsy+303);line(wsx+194,wsy+296,wsx+191,wsy+303);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
-   // kat:=45;line(wsx+190,wsy+297,wsx+199,wsy+302);line(wsx+194,wsy+295,wsx+199,wsy+302);
+   // kat=45;line(wsx+190,wsy+297,wsx+199,wsy+302);line(wsx+194,wsy+295,wsx+199,wsy+302);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
    // setcolor(3);
    // rectangle(wsx+180,wsy+290,wsx+201,wsy+300);
-   // kat:=315;line(wsx+188,wsy+295,wsx+183,wsy+302);line(wsx+192,wsy+297,wsx+183,wsy+302);
+   // kat=315;line(wsx+188,wsy+295,wsx+183,wsy+302);line(wsx+192,wsy+297,wsx+183,wsy+302);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
      // end;
    // 2:begin setcolor(0);
-     // kat:=0;line(wsx+188,wsy+296,wsx+191,wsy+303);
+     // kat=0;line(wsx+188,wsy+296,wsx+191,wsy+303);
    // line(wsx+194,wsy+296,wsx+191,wsy+303);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
-    // kat:=315;line(wsx+188,wsy+295,wsx+183,wsy+302);line(wsx+192,wsy+297,wsx+183,wsy+302);
+    // kat=315;line(wsx+188,wsy+295,wsx+183,wsy+302);line(wsx+192,wsy+297,wsx+183,wsy+302);
      // arc(wsx+191,wsy+295,kat,kat+180,3);
-   // setcolor(3);kat:=45;line(wsx+190,wsy+297,wsx+199,wsy+302);line(wsx+194,wsy+295,wsx+199,wsy+302);
+   // setcolor(3);kat=45;line(wsx+190,wsy+297,wsx+199,wsy+302);line(wsx+194,wsy+295,wsx+199,wsy+302);
      // arc(wsx+191,wsy+295,kat,kat+180,3);rectangle(wsx+180,wsy+290,wsx+201,wsy+300)end;
   // end;
   // outtextxy(wsx+157,wsy+287,'LHz');
@@ -593,7 +593,7 @@
 // pol_pom5(0,-10,1,0,1,0,1,1,1,false,'GENERATOR I');
 // pol_pom5(320,-10,0,1,1,0,1,0,1,false,'GENERATOR II');
 // line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,109,'110kV');end;
-// nrekranu:=2;
+// nrekranu=2;
 // end;
 
 // procedure ekran1;
@@ -603,7 +603,7 @@
 // pol_pom4(0,0,0,0,0,0,1,0,1,1,0,1,1,0,0,false);
 // pol_pom1(320,0,1,1,0,1,1,1,0,5,false);
 // line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,'110kV');end;
-// nrekranu:=1;
+// nrekranu=1;
 // end;
 
 // procedure ekran3;
@@ -614,7 +614,7 @@
 // pol_pom3(320,0,0,1,0,1,1,1,0,0,1,1,0,1,false,false);
 
 // line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,'110kV');END;
-// nrekranu:=3;
+// nrekranu=3;
 // end;
 
 // procedure ekran4;
@@ -624,13 +624,13 @@
 // pol_pom6(0,0,1,1,1,1,false);
 // pol_pom7(320,0,1,1,0,1,1,1,0,false);
 // line (getmaxx div 2,0,getmaxx div 2,getmaxy);outtextxy(20,119,'110kV');END;
-// nrekranu:=4;
+// nrekranu=4;
 // end;
 
 // procedure spr_klaw;
 // var a:char;
 // begin
-// a:=readkey;
+// a=readkey;
  // case a of
  // '1':ekran1;
  // '2':ekran2;
@@ -643,7 +643,7 @@
 // var  p:pointer;
   // size:word;
  // begin
-  // size:=imagesize(prx1,pry1,prx2,pry2);
+  // size=imagesize(prx1,pry1,prx2,pry2);
   // getmem(p,size);
   // getimage(prx1,pry1,prx2,pry2,p^);
   // setfillstyle(1,color);
@@ -684,7 +684,7 @@
 // line(wsx,wsy,wsx,wsy+79);line(wsx+2,wsy+2,wsx+2,wsy+77);
 // line(wsx,wsy+79,wsx+44,wsy+79);line(wsx+2,wsy+77,wsx+42,wsy+77);
 // line(wsx+22,wsy+2,wsx+22,wsy+77);
-// for a:=0 to 3 do begin
+// for a=0 to 3 do begin
 // line(wsx+2,wsy+17+a*15,wsx+42,wsy+17+a*15);end;
 // settextstyle(defaultfont,horizdir,1);
 // delta(wsx+8,wsy+12);outtextxy(wsx+29,wsy+7,'D');
@@ -724,22 +724,22 @@
 // var a,z,x:word;b,s:char;k:boolean;
 // begin
 // if a <> 1 then begin
-// clearviewport;z:=11;k:=false;
+// clearviewport;z=11;k=false;
 // setcolor(3);pol_pom1(0,0,1,1,0,1,1,1,0,7,true);
 // setcolor(15);outtextxy(350,50,'W CELU UZYSKANIA INFORMACJI NA TEMAT POLA');
 // pisz(350,62,'POMIAROWEGO UZzYJ KLAWISZY');strzal(510,63);
 // outtextxy(350,74,'LUB ENTER DLA KONTYNUACJI');
 // repeat
-// b:=readkey;
+// b=readkey;
 // if ord(b)<>0 then begin
-// if k=true then z:=x;
-// if b=#72 then begin z:=z-1;x:=z;k:=false;end;
-// if b=#80 then begin z:=z+1;x:=z;k:=false;end;
+// if k=true then z=x;
+// if b=#72 then begin z=z-1;x=z;k=false;end;
+// if b=#80 then begin z=z+1;x=z;k=false;end;
 // if b<>#80 then begin
-// if b<>#72 then begin z:=50+z;k:=true;end;end;
-// if z=100 then z:=50;
-// if z=0 then z:=11;
-// if z=12 then z:=1;
+// if b<>#72 then begin z=50+z;k=true;end;end;
+// if z=100 then z=50;
+// if z=0 then z=11;
+// if z=12 then z=1;
 // if z=1 then begin;
    // ryspol1;obwodka(48,14,89,95,cr1);
    // pisz(350,20,'MIERNIKI PARAMETROqW ENERGII PRZEPLlYWAJAaCEJ');
@@ -790,9 +790,9 @@
    // END;
 // end;
    // until (b=#13) or (b=#27);
-   // if b=#27 then uciec:=1;
+   // if b=#27 then uciec=1;
 
-// end;a:=1;end;
+// end;a=1;end;
 // {=================================================================================}
 // procedure ryspol2;
 // begin
@@ -805,22 +805,22 @@
 // var a,z,x:word;b,s:char;k:boolean;
 // begin
 // if a <> 2 then begin
-// clearviewport;z:=18;k:=false;
+// clearviewport;z=18;k=false;
 // pol_pom3(0,0,0,1,0,1,1,1,0,1,0,1,0,1,true,true);
 // setcolor(15);pisz(350,50,'W CELU UZYSKANIA INFORMACJI NA TEMAT POLA');
 // pisz(350,62,'POMIAROWEGO UZzYJ KLAWISZY');strzal(510,63);
 // pisz(350,74,'LUB ENTER DLA KONTYNUACJI');
 // repeat
-// b:=readkey;
+// b=readkey;
 // if ord(b)<>0 then begin
-// if k=true then z:=x;
-// if b=#72 then begin z:=z-1;x:=z;k:=false;end;
-// if b=#80 then begin z:=z+1;x:=z;k:=false;end;
+// if k=true then z=x;
+// if b=#72 then begin z=z-1;x=z;k=false;end;
+// if b=#80 then begin z=z+1;x=z;k=false;end;
 // if b<>#80 then begin
-// if b<>#72 then begin z:=50+z;k:=true;end;end;
-// if z=100 then z:=50;
-// if z=0 then z:=18;
-// if z=19 then z:=1;
+// if b<>#72 then begin z=50+z;k=true;end;end;
+// if z=100 then z=50;
+// if z=0 then z=18;
+// if z=19 then z=1;
 // if z=1 then begin;
    // ryspol2;obwodka(44,14,83,95,cr1);
    // pisz(350,20,'MIERNIKI PARAMETROqW ENERGII PRZEPLlYWAJAaCEJ');
@@ -901,9 +901,9 @@
    // end;
 // end;
    // until (b=#13) or (b=#27);
-   // if b=#27 then uciec:=1;
+   // if b=#27 then uciec=1;
 
-// end;a:=2;end;
+// end;a=2;end;
 // {=================================================================================}
 // procedure ryspol3;
 // begin
@@ -916,22 +916,22 @@
 // var a,z,x:word;b,s:char;k:boolean;
 // begin
 // if a <> 3 then begin
-// clearviewport;z:=15;k:=false;
+// clearviewport;z=15;k=false;
 // pol_pom5(0,-10,1,0,1,0,1,0,0,true,'GENERATOR I');
 // setcolor(15);pisz(350,50,'W CELU UZYSKANIA INFORMACJI NA TEMAT POLA');
 // pisz(350,62,'POMIAROWEGO UZzYJ KLAWISZY');strzal(510,63);
 // pisz(350,74,'LUB ENTER DLA KONTYNUACJI');
 // repeat
-// b:=readkey;
+// b=readkey;
 // if ord(b)<>0 then begin
-// if k=true then z:=x;
-// if b=#72 then begin z:=z-1;x:=z;k:=false;end;
-// if b=#80 then begin z:=z+1;x:=z;k:=false;end;
+// if k=true then z=x;
+// if b=#72 then begin z=z-1;x=z;k=false;end;
+// if b=#80 then begin z=z+1;x=z;k=false;end;
 // if b<>#80 then begin
-// if b<>#72 then begin z:=50+z;k:=true;end;end;
-// if z=100 then z:=50;
-// if z=0 then z:=15;
-// if z=16 then z:=1;
+// if b<>#72 then begin z=50+z;k=true;end;end;
+// if z=100 then z=50;
+// if z=0 then z=15;
+// if z=16 then z=1;
 // if z=1 then begin
    // ryspol3;obwodka(20,14,65,95,cr1);
    // pisz(350,20,'MIERNIK PRAaDU GENERATORA PO STRONIE 110kV');
@@ -1001,8 +1001,8 @@
    // END;
 // END;
    // until (b=#13) or (b=#27);
-   // if b=#27 then uciec:=1;
-// a:=3;
+   // if b=#27 then uciec=1;
+// a=3;
 // end;END;
 // {=====================================================================================}
 // procedure ryspol4;
@@ -1017,22 +1017,22 @@
 // var a,z,x:word;b,s:char;k:boolean;
 // begin
 // if a <> 3 then begin
-// clearviewport;z:=13;k:=false;
+// clearviewport;z=13;k=false;
 // pol_pom4(0,0,0,0,0,0,1,0,1,1,0,1,1,0,0,true);
 // setcolor(15);pisz(350,50,'W CELU UZYSKANIA INFORMACJI NA TEMAT POLA');
 // pisz(350,62,'POMIAROWEGO UZzYJ KLAWISZY');strzal(510,63);
 // pisz(350,74,'LUB ENTER DLA KONTYNUACJI');
 // repeat
-// b:=readkey;
+// b=readkey;
 // if ord(b)<>0 then begin
-// if k=true then z:=x;
-// if b=#72 then begin z:=z-1;x:=z;k:=false;end;
-// if b=#80 then begin z:=z+1;x:=z;k:=false;end;
+// if k=true then z=x;
+// if b=#72 then begin z=z-1;x=z;k=false;end;
+// if b=#80 then begin z=z+1;x=z;k=false;end;
 // if b<>#80 then begin
-// if b<>#72 then begin z:=50+z;k:=true;end;end;
-// if z=100 then z:=50;
-// if z=0 then z:=13;
-// if z=14 then z:=1;
+// if b<>#72 then begin z=50+z;k=true;end;end;
+// if z=100 then z=50;
+// if z=0 then z=13;
+// if z=14 then z=1;
 // if z=8 then begin
    // ryspol4;obwodka(178,18,215,90,cr1);
    // pisz(350,20,'MIERNIKI PARAMETROqW ENERGII PRZESYLlANEJ');
@@ -1090,23 +1090,23 @@
    // END;
    // end;
    // until (b=#13) or (b=#27);
-   // if b=#27 then uciec:=1;
+   // if b=#27 then uciec=1;
 // end;end;
 
 // procedure pokaz;
 // begin
-// uciec:=0;
+// uciec=0;
 // demo1;
 // if uciec<>1 then demo2;
 // if uciec<>1 then demo3;
 // if uciec<>1 then demo4;
 // if uciec<>1 then begin
 // clearviewport;
-// nrekranu:=0;
+// nrekranu=0;
 // pisz(60,60,'NACISKANIE KLAWISZY 1,2,3,4 POZWALA NA OGLAaDANIE CALlYCH POqL');
 // pisz(60,72,'NACISqNIEaCIE ENTER LUB Esc SPOWODUJE POWROqT DO MENU');
 // repeat
-// ch:=readkey;
+// ch=readkey;
 // if ord(ch)<>0 then begin;
  // case ch of
  // '1':ekran1;
@@ -1123,8 +1123,8 @@
     // warwol,wartd:byte;
 // begin
 // randomize;
-// wartd:=round(random(20));
-// warwol:=wartd+100;
+// wartd=round(random(20));
+// warwol=wartd+100;
 // setcolor(15);pisz(340,188,'USTAWIANIE NAPIEaCIA:');
 // pisz(340,200,'KLAWISZE KURSORA    - ZMIANA NAPIEaCIA');strzal(443,202);
 // pisz(340,212,'ENTER - PRZEJSqCIE DO DALSZEJ SYCHRONIZACJI ');
@@ -1132,10 +1132,10 @@
   // str(warwol,warnap);
   // pisz(485,62,warnap);
  // repeat
-  // klaw:=readkey;
+  // klaw=readkey;
   // if ord(klaw)<>0 then begin
-  // if klaw=#72 then begin warwol:=warwol+1;if warwol=131 then warwol:=130; end;
-  // if klaw=#80 then begin warwol:=warwol-1;if warwol=89 then warwol:=90; end;
+  // if klaw=#72 then begin warwol=warwol+1;if warwol=131 then warwol=130; end;
+  // if klaw=#80 then begin warwol=warwol-1;if warwol=89 then warwol=90; end;
   // bar(484,63,505,71);
   // str(warwol,warnap);
   // pisz(485,62,warnap);
@@ -1146,7 +1146,7 @@
 // procedure udana;
 // var czek:char;
 // begin
-// pisz(340,285,'UDANA SYNCHRONIZACJA');czek:=readkey;
+// pisz(340,285,'UDANA SYNCHRONIZACJA');czek=readkey;
 // pol_pom5(0,-10,1,0,1,1,0,0,0,true,'GENERATOR I');delay(500);
 // pol_pom5(0,-10,1,0,1,1,0,0,0,false,'GENERATOR I');delay(500);
 // end;
@@ -1156,7 +1156,7 @@
 // begin
 // pisz(340,285,'SYNCHRONIZACJA NIEDOKLlADNA,');
 // pisz(340,297,'ISTNIEJE POTRZEBA POWTOqRNEJ SYNCHRONIZACJI');
-// czek:=readkey;
+// czek=readkey;
 // end;
 
 // procedure synchron;
@@ -1169,7 +1169,7 @@
 // const xsyn=495;
       // ysyn=145;
 // begin
- // xzew:=465;yzew:=150;szybkosc:=1;kat:=0;koniec:=false;kier:=-1;
+ // xzew=465;yzew=150;szybkosc=1;kat=0;koniec=false;kier=-1;
  // setfillstyle(0,0);
  // bar (320,0,getmaxx,getmaxy);
  // setcolor(15);
@@ -1183,28 +1183,28 @@
    // circle(xsyn,ysyn,30);line(465,ysyn,470,ysyn);
    // setwritemode(copyput);
    // repeat
-    // kat:=kat+(1*kier);
-    // if kat=720 then kat:=0;
-    // if kat=-720 then kat:=0;
-    // regs.ah:=$0b;
+    // kat=kat+(1*kier);
+    // if kat=720 then kat=0;
+    // if kat=-720 then kat=0;
+    // regs.ah=$0b;
     // intr($21,regs);
    // if regs.al<>0 then begin
-    // regs.ah:=$10;
+    // regs.ah=$10;
     // intr($16,regs);
-    // if regs.ah=72 then szybkosc:=szybkosc+(1*kier);
-    // if regs.ah=80 then szybkosc:=szybkosc-(1*kier);
-    // if regs.ah=79 then koniec:=true;
-    // if szybkosc=0 then szybkosc:=1;
-    // if szybkosc=50 then szybkosc:=100;
-    // if szybkosc=99 then szybkosc:=49;
-    // if szybkosc=101 then kier:=kier*-1
+    // if regs.ah=72 then szybkosc=szybkosc+(1*kier);
+    // if regs.ah=80 then szybkosc=szybkosc-(1*kier);
+    // if regs.ah=79 then koniec=true;
+    // if szybkosc=0 then szybkosc=1;
+    // if szybkosc=50 then szybkosc=100;
+    // if szybkosc=99 then szybkosc=49;
+    // if szybkosc=101 then kier=kier*-1
    // end;
    // delay(szybkosc);
    // setcolor(0);
    // line(xsyn,ysyn,xzew,yzew);
-   // radkat:=(kat/2)*(pi/180);
-   // xzew:=round(xsyn+(20*cos(radkat)));
-   // yzew:=round((ysyn+(14*sin(radkat))));
+   // radkat=(kat/2)*(pi/180);
+   // xzew=round(xsyn+(20*cos(radkat)));
+   // yzew=round((ysyn+(14*sin(radkat))));
    // setcolor(15);
    // line(xsyn,ysyn,xzew,yzew);
    // until koniec;
@@ -1213,7 +1213,7 @@
        // else begin pisz(340,285,'NIEUDANA SYNCHRONIZACJA');
          // pisz(340,297,'SPROqBUJ POWTOqRZYCq SYNCHRONIZACJEa');
          // pisz(340,309,'JEDNAK PAMIETAJ ZzE W RZECZYWISTOSqCI');
-         // pisz(340,321,'NIE WSZYSTKO DA SIEa POWTOqRZYCq');czek:=readkey;end;
+         // pisz(340,321,'NIE WSZYSTKO DA SIEa POWTOqRZYCq');czek=readkey;end;
 // end;
 
 // procedure beep;
@@ -1238,7 +1238,7 @@
  // a:char;
 // begin
  // delay(500);
- // size:=imagesize(100,100,312,180);
+ // size=imagesize(100,100,312,180);
  // getmem(p,size);
  // settextstyle(2,0,4);
  // getimage(100,100,312,180,p^);
@@ -1254,7 +1254,7 @@
  // PISZ(110,170,'NACISqNIJ DOWOLNY KLAWISZ');
  // sound(1500);delay(600);nosound;
   // repeat until keypressed;
-  // a:=readkey;
+  // a=readkey;
  // putimage(100,100,p^,normalput);
  // freemem(p,size);
 // end;
@@ -1275,7 +1275,7 @@
  // PISZ(115,185,'60MW DO SIECI 110kV.');
  // PISZ(115,210,'NACISqNIJ DOWOLNY KLAWISZ');
  // repeat until keypressed;
- // a:=readkey;
+ // a=readkey;
 // end;
 
 
@@ -1304,7 +1304,7 @@
 // pol_pom5(0,-10,1,0,0,1,0,0,0,false,'GENERATOR I');delay(500);
 // pol_pom5(0,-10,1,0,0,1,0,0,0,true,'GENERATOR I');delay(500);
 // pol_pom5(0,-10,1,0,0,1,0,0,0,false,'GENERATOR I');delay(500);
-// nrekranu:=0;
+// nrekranu=0;
 // ekran4;
 // delay(600);pol_pom6(0,0,0,1,1,1,false);
 // pol_pom6(0,0,0,1,1,1,true);delay(1000);
@@ -1340,7 +1340,7 @@
 // pisz(155,240,'NACISqNIJ DOWOLNY KLAWISZ');
 // delay(1000);
 // setcolor(15);
-// A:=READKEY;
+// A=READKEY;
 // end;
 
 // procedure pokaz4;
@@ -1366,7 +1366,7 @@
 // pisz(155,240,'NACISqNIJ DOWOLNY KLAWISZ');
 // delay(1000);
 // setcolor(15);
-// A:=READKEY;
+// A=READKEY;
 // end;
 
 // procedure pokaz5;
@@ -1394,7 +1394,7 @@
 // pisz(55,100,'NACISqNIJ DOWOLNY KLAWISZ');
 // delay(1000);
 // setcolor(15);
-// A:=READKEY;
+// A=READKEY;
 // end;
 
 // procedure pokaz6;
@@ -1413,7 +1413,7 @@
 // pisz(155,240,'NACISqNIJ DOWOLNY KLAWISZ');
 // delay(1000);
 // setcolor(15);
-// A:=READKEY;
+// A=READKEY;
 // end;
 
 // procedure pokaz7;
@@ -1432,7 +1432,7 @@
 // pisz(155,240,'NACISqNIJ DOWOLNY KLAWISZ');
 // delay(1000);
 // setcolor(15);
-// A:=READKEY;
+// A=READKEY;
 // end;
 
 // procedure informacja;
@@ -1457,7 +1457,7 @@
 // pisz(72,155,'EKRANU Z OPISEM NASTAWNI. W MENU PRZYJEaTO IDENTYCZNY SPOSOqB.KLAWISZ Esc NACISqNIETY');
 // pisz(72,167,'W GLlOqWNYM MENU POWODUJE WYJSqIE Z PROGRAMU.');
 // pisz(240,265,'NACISqNIJ DOWOLNY KLAWISZ');
-// a:=readkey;
+// a=readkey;
 // end;
 
 // procedure ry;
@@ -1475,9 +1475,9 @@
 // var nrawarii:byte;
 // begin
 // repeat
-// nrawarii:=random(6);
+// nrawarii=random(6);
 // until nrawarii<>starynr;
-// starynr:=nrawarii;
+// starynr=nrawarii;
 // case nrawarii of
 // 0:pokaz2;
 // 1:pokaz3;
@@ -1491,7 +1491,7 @@
 // procedure odleglosc;
 // var nr2:byte;
 // begin
- // nr2:=random(2);
+ // nr2=random(2);
  // case nr2 of
  // 0:pokaz6;
  // 1:pokaz7;
@@ -1537,12 +1537,12 @@
  // pisz(140,146,'ZABEZPIECZENIA ODLEGLlOSqIOWE');
  // pisz(140,158,'ZWARCIE NA TRANSFORMATORZE');
  // pisz(140,170,'SYNCHRONIZACJA GENERATORA');
- // q:=readkey;
+ // q=readkey;
  // setfillstyle(1,7);
  // if ord(q)<>0 then begin
- // if q=#80 then n1:=n1+1 else if q=#72 then n1:=n1-1 else if (q<>#13) and (q<>#27) then beep;
- // if n1=7 then n1:=1;
- // if n1=0 then n1:=6;
+ // if q=#80 then n1=n1+1 else if q=#72 then n1=n1-1 else if (q<>#13) and (q<>#27) then beep;
+ // if n1=7 then n1=1;
+ // if n1=0 then n1=6;
  // if n1=1 then begin np;obwodka1(130,109,400,121,3);end;
  // if n1=2 then begin np;obwodka1(130,121,400,133,3);end;
  // if n1=3 then begin np;obwodka1(130,133,400,145,3);end;
@@ -1552,7 +1552,7 @@
  // end;
   // setfillstyle(1,11);
   // until (q=#13) or (q=#27);
-   // if q=#27 then n1:=8;
+   // if q=#27 then n1=8;
  // case n1 of
 // 1:losowanie_awarii;
 // 2:pokaz3;
@@ -1570,7 +1570,7 @@
 // begin
   // setcolor(15);
   // pisz(30,300,'JESTESq PEWNY ZzE CHCESZ WYJSqCq Z PROGRAMU? TAK(ENTER/Esc/T)  NIE(INNE KLAWISZE)');
-  // klawis:=readkey;
+  // klawis=readkey;
 // if (klawis=#27) or (klawis=#13) or (klawis='T') or (klawis='t') then begin
    // clearviewport;
    // closegraph;
@@ -1583,7 +1583,7 @@
 // begin
  // clearviewport;
  // settextstyle(2,0,4);
- // n:=1;
+ // n=1;
  // setfillstyle(1,11);
  // bar(130,100,400,170);
  // SETFILLSTYLE(1,15);
@@ -1597,13 +1597,13 @@
  // PISZ(140,130,'DEMONSTRACJA ELEMENTOqW POqL POMIAROWYCH');
  // PISZ(140,141,'SYMULACJA  STANOqW  AWARYJNYCH');
  // PISZ(140,152,'KROqTKA INFORMACJA O PROGRAMIE');
- // q:=readkey;
+ // q=readkey;
  // if q=#27 then pytanie;
  // setfillstyle(1,7);
  // if ord(q)<>0 then begin
- // if q=#80 then n:=N+1 else if q=#72 then n:=n-1 else if (q<>#13)and(q<>#27) then beep;
- // if n=4 then n:=1;
- // if n=0 then n:=3;
+ // if q=#80 then n=N+1 else if q=#72 then n=n-1 else if (q<>#13)and(q<>#27) then beep;
+ // if n=4 then n=1;
+ // if n=0 then n=3;
  // if n=1 then begin ry;obwodka1(130,130,400,141,3);end;
  // if n=2 then begin ry;obwodka1(130,142,400,152,3);end;
  // if n=3 then begin ry;obwodka1(130,151,400,163,3);end;
@@ -1611,15 +1611,15 @@
   // until q=#13;
   // case n of
 // 1:pokaz;
-// 2:begin n1:=1;wybor_awarii;end;
+// 2:begin n1=1;wybor_awarii;end;
 // 3:informacja;
 // end
 // end;
 
 
 // begin
-   // n:=vgamed;m:=vga;initgraph(m,n,'c:\turbo\');
-// starynr:=0;cr1:=14;
+   // n=vgamed;m=vga;initgraph(m,n,'c:\turbo\');
+// starynr=0;cr1=14;
 // clearviewport;
 // repeat NAPIS until false;
 // closegraph;
