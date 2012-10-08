@@ -17,7 +17,9 @@ namespace PrzepisanyDyplom
         }
 
         private Graphics m_graphics;
-        private readonly Pen m_pen = new Pen(Color.Blue, 2F);
+        private Pen m_pen = new Pen(Color.Blue, 2F);
+        private Font m_font;
+        private Brush m_brush;
 
         //private void DrawPoint(int x, int y)
         //{
@@ -81,7 +83,7 @@ namespace PrzepisanyDyplom
             // 2:begin n1=1;wybor_awarii;end;
             // 3:informacja;
         }
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern short GetAsyncKeyState(long vKey);
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern short GetKeyState(int keyCode); 
@@ -93,9 +95,9 @@ namespace PrzepisanyDyplom
             do
             {
 
-                for (i = 0; i < 255; i++)
+                for (long i = 0; i < 255; i++)
                 {
-                    key_my = GetAsyncKeyState(i);
+                    //key_my = GetAsyncKeyState(i);
                     if (key_my == (System.Int16.MinValue + 1))
                     { search = true; break; }
                 }
@@ -105,7 +107,7 @@ namespace PrzepisanyDyplom
 
         private void obwodka1(int prx1,int pry1, int prx2, int pry2, int color)
         {
-            // var  p:pointer;
+            // TODO: var  p:pointer;
             // size:word;
             // {
             // size=imagesize(prx1,pry1,prx2,pry2);
@@ -117,7 +119,7 @@ namespace PrzepisanyDyplom
             // putimage(prx1,pry1,p^,andput);
             // freemem(p,size);
             // };
-            throw new NotImplementedException();
+            m_graphics.DrawRectangle(m_pen, prx1, pry1, prx2-prx1, pry2-pry1);
         }
 
         private void PISZ(int wsx, int wsy, string napis)
@@ -137,49 +139,65 @@ namespace PrzepisanyDyplom
             }
         }
 
-        private void outtextxy(int wsx, int wsy, string znakp)
+        private void pzae(int wsx, int wsy)
         {
-            throw new NotImplementedException();
+            line(wsx, wsy, wsx + 3, wsy - 3);
         }
 
-        private void pzae(int i1, int i2)
+        private void pzz(int wsx, int wsy)
         {
-            throw new NotImplementedException();
+            circle(wsx, wsy, 1);
         }
 
-        private void pzz(int i1, int i2)
+        private void pzl(int wsx, int wsy)
         {
-            throw new NotImplementedException();
+            line(wsx, wsy, wsx + 3, wsy - 3);
         }
 
-        private void pzl(int i1, int i2)
+        private void pzcoz(int wsx, int wsy)
         {
-            throw new NotImplementedException();
-        }
-
-        private void pzcoz(int i1, int i2)
-        {
-            throw new NotImplementedException();
+            line(wsx, wsy, wsx + 1, wsy - 1);
         }
 
         private void setcolor (int color) 
         {
-            throw new NotImplementedException();
+            m_pen = new Pen(Color.Black, 2F);
+            //TODO: przekodowanie kolorów
         }
 
         private void bar (int left, int top, int right, int bottom)
         {
-            throw new NotImplementedException();
+            m_graphics.DrawLine(m_pen, left, top, right, bottom);
+            //TODO: wyjaśnić, czy to były wypełnione czy puste prostokąty
         }
 
         private void setfillstyle(int pattern, int color)
         {
-            throw new NotImplementedException();
+            m_brush = new SolidBrush(Color.Black);
+            //TODO: color, pattern switch, może też m_Pen
         }
-
+        
         private void settextstyle(int font, int direction, int charsize)
         {
-            throw new NotImplementedException();
+            m_font = new Font(FontFamily.GenericSerif, charsize*3, FontStyle.Regular);
+            m_brush = Brushes.Black;
+            //TODO: if na font, sprawdzić direction, może też m_Pen
         }
+
+        private void outtextxy(int wsx, int wsy, string znakp)
+        {
+            m_graphics.DrawString(znakp, m_font, m_brush, wsx, wsy);
+        }
+
+        private void line(int x1, int y1, int x2, int y2)
+        {
+            m_graphics.DrawLine(m_pen, x1, y1, x2, y2);
+        }
+
+        private void circle(int wsx, int wsy, int radius)
+        {
+            m_graphics.DrawEllipse(m_pen, wsx, wsy, radius, radius);
+        }
+
     }
 }
