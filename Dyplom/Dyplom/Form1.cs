@@ -39,7 +39,14 @@ namespace PrzepisanyDyplom
         private void MainRoutine()
         {
             starynr = 0; cr1 = 14;
-            do { NAPIS(); } while (true);
+            try
+            {
+                do { NAPIS(); } while (true);
+            }
+            catch (ExternalException ex)
+            {
+                //TODO: Obsługa w kodzie
+            }
         }
 
         private void NAPIS()
