@@ -76,21 +76,36 @@ namespace PrzepisanyDyplom
              q=ReadKey();
                 //Esc
                 if (q==27) pytanie();
-                // setfillstyle(1,7);
-                // if ord(q)<>0 then begin
-                // if q=#80 then n=N+1 else if q=#72 then n=n-1 else if (q<>#13)and(q<>#27) then beep;
-                // if n=4 then n=1;
-                // if n=0 then n=3;
-                // if n=1 then begin ry;obwodka1(130,130,400,141,3);end;
-                // if n=2 then begin ry;obwodka1(130,142,400,152,3);end;
-                // if n=3 then begin ry;obwodka1(130,151,400,163,3);end;
-                // end; setfillstyle(1,11);
+                setfillstyle(1,7);
+                if (q != 0)
+                {
+
+                    if (q == 80)
+                        n++;
+                    else if (q == 72)
+                        n--;
+                    else if (q != 13 && q != 27)
+                        beep();
+                    // if (n==4) then n=1;
+                    // if (n==0) then n=3;
+                    // if (n==1) {ry;obwodka1(130,130,400,141,3);}
+                    // if (n==2) {ry;obwodka1(130,142,400,152,3);}
+                    // if (n==3) {ry;obwodka1(130,151,400,163,3);}
+                    // }; setfillstyle(1,11);
+                }
             } while (q!=13);
             
             // case n of
             // 1:pokaz;
             // 2:begin n1=1;wybor_awarii;end;
             // 3:informacja;
+        }
+
+        private void beep()
+        {
+            AlertDing ding = new AlertDing(250, 8);
+            ding.Play();
+
         }
 
         private void pytanie()
