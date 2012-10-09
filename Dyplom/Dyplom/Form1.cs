@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PrzepisanyDyplom
@@ -73,7 +74,8 @@ namespace PrzepisanyDyplom
              PISZ(140,141,"SYMULACJA  STANOqW  AWARYJNYCH");
              PISZ(140,152,"KROqTKA INFORMACJA O PROGRAMIE");
              q=ReadKey();
-                // if q=#27 then pytanie;
+                //Esc
+                if (q==27) pytanie();
                 // setfillstyle(1,7);
                 // if ord(q)<>0 then begin
                 // if q=#80 then n=N+1 else if q=#72 then n=n-1 else if (q<>#13)and(q<>#27) then beep;
@@ -89,6 +91,25 @@ namespace PrzepisanyDyplom
             // 1:pokaz;
             // 2:begin n1=1;wybor_awarii;end;
             // 3:informacja;
+        }
+
+        private void pytanie()
+        {
+            setcolor(15);
+            PISZ(30, 300, "JESTESq PEWNY ZzE CHCESZ WYJSqCq Z PROGRAMU? TAK(ENTER/Esc/T)  NIE(INNE KLAWISZE)");
+            Thread.Sleep(200);//Żeby użytkownik zdążył puścić Esc
+            char klawis = ReadKey();
+            if (klawis == 27 || klawis == 13 || klawis == 'T' || klawis == 't')
+            {
+                //TODO: clearviewport;
+                // closegraph;
+                Application.Exit();
+            }
+            else
+            {
+                setfillstyle(0, 0);
+                bar(20, 300, 532, 320);
+            }
         }
 
         [DllImport("user32.dll")] static extern short GetAsyncKeyState(int vKey); 
