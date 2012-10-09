@@ -39,7 +39,7 @@ namespace PrzepisanyDyplom
         private void MainRoutine()
         {
             starynr = 0; cr1 = 14;
-            do{NAPIS();} while (true);
+            do { NAPIS(); } while (true);
         }
 
         private void NAPIS()
@@ -65,7 +65,7 @@ namespace PrzepisanyDyplom
              PISZ(140,130,"DEMONSTRACJA ELEMENTOqW POqL POMIAROWYCH");
              PISZ(140,141,"SYMULACJA  STANOqW  AWARYJNYCH");
              PISZ(140,152,"KROqTKA INFORMACJA O PROGRAMIE");
-             q=readkey();
+             q=ReadKey();
                 // if q=#27 then pytanie;
                 // setfillstyle(1,7);
                 // if ord(q)<>0 then begin
@@ -83,26 +83,29 @@ namespace PrzepisanyDyplom
             // 2:begin n1=1;wybor_awarii;end;
             // 3:informacja;
         }
-        [DllImport("user32.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern short GetAsyncKeyState(long vKey);
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern short GetKeyState(int keyCode); 
 
-        private char readkey()
+        [DllImport("user32.dll")] static extern short GetAsyncKeyState(int vKey); 
+
+        private static char ReadKey()
         {
             bool search = false;
-            short key_my = 0;
+            var pressed = 0;
             do
             {
 
-                for (long i = 0; i < 255; i++)
+                for (int i = 0; i < 255; i++)
                 {
-                    //key_my = GetAsyncKeyState(i);
-                    if (key_my == (System.Int16.MinValue + 1))
-                    { search = true; break; }
+                    short keyState = GetAsyncKeyState(i);
+                    if (0 != (keyState & 0x8000))
+                    {
+                        pressed = i;
+                        search = true; 
+                        break;
+                    }
                 }
-            } while (search);
-            return (char) key_my;
+                Application.DoEvents();
+            } while (!search);
+            return (char) pressed;
         }
 
         private void obwodka1(int prx1,int pry1, int prx2, int pry2, int color)
