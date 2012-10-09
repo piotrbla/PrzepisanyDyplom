@@ -198,7 +198,7 @@ namespace PrzepisanyDyplom
 
         private void bar (int left, int top, int right, int bottom)
         {
-            m_graphics.DrawLine(m_pen, left, top, right, bottom);
+            m_graphics.DrawRectangle(m_pen, left, top, right, bottom);
             //TODO: wyjaśnić, czy to były wypełnione czy puste prostokąty
         }
 
