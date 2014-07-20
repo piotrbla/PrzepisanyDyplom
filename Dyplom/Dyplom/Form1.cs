@@ -171,36 +171,38 @@ namespace PrzepisanyDyplom
         private void PISZ(int wsx, int wsy, string napis)
         {
             int c;
+            int yMultiplied = wsy*2;
             string znakp;
             c = napis.Length;
-            for (int i = 1; i < c; i++)
+            for (int i = 0; i < c; i++)
             {
                 znakp=napis.Substring(i,1);
-                if (znakp=="q") pzcoz(wsx - 3, wsy + 1);
-                else if (znakp=="l") pzl(wsx - 7, wsy + 8); 
-                else if (znakp=="z") pzz(wsx - 3, wsy + 0);
-                else if (znakp=="a") pzae(wsx - 2, wsy + 10);
-                else {outtextxy(wsx,wsy,znakp);wsx=wsx+6;}
+                if (znakp=="q") PolishLetterCoz(wsx - 3, yMultiplied + 1);
+                else if (znakp=="l") PolishLetterL(wsx - 7, yMultiplied + 8); 
+                else if (znakp=="z") PolishLetterZ(wsx - 3, yMultiplied + 0);
+                else if (znakp == "a") PolishLetterAe(wsx - 2, yMultiplied + 10);
+                else {outtextxy(wsx,yMultiplied,znakp);wsx=wsx+12;}
 
             }
         }
 
-        private void pzae(int wsx, int wsy)
+        //TODO: Poniższe funkcje do usunięcia
+        private void PolishLetterAe(int wsx, int wsy)
         {
             line(wsx, wsy, wsx + 3, wsy - 3);
         }
 
-        private void pzz(int wsx, int wsy)
+        private void PolishLetterZ(int wsx, int wsy)
         {
             circle(wsx, wsy, 1);
         }
 
-        private void pzl(int wsx, int wsy)
+        private void PolishLetterL(int wsx, int wsy)
         {
             line(wsx, wsy, wsx + 3, wsy - 3);
         }
 
-        private void pzcoz(int wsx, int wsy)
+        private void PolishLetterCoz(int wsx, int wsy)
         {
             line(wsx, wsy, wsx + 1, wsy - 1);
         }
