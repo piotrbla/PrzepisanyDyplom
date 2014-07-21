@@ -50,6 +50,17 @@ namespace PrzepisanyDyplom
             }
         }
 
+        private void ry()
+        {
+            setfillstyle(1,11);
+             bar(130,100,400,170);
+             setcolor(0);
+             PISZ(140,110,"PROGRAM SYMULUJAaCY PRACEa NASTAWNI EL. 110kV");
+             PISZ(140,130,"DEMONSTRACJA ELEMENTOqW POqL POMIAROWYCH");
+             PISZ(140,141,"SYMULACJA  STANOqW  AWARYJNYCH");
+             PISZ(140,152,"KROqTKA INFORMACJA O PROGRAMIE");
+        }
+
         private void NAPIS()
         {
             char q = (char) 0;
@@ -75,22 +86,22 @@ namespace PrzepisanyDyplom
              PISZ(140,152,"KROqTKA INFORMACJA O PROGRAMIE");
              q=ReadKey();
                 //Esc
-                if (q==27) pytanie();
+             if (q == KeyEscape) pytanie();
                 setfillstyle(1,7);
                 if (q != 0)
                 {
 
-                    if (q == 80)
+                    if (q == KeyCursorDown)
                         n++;
-                    else if (q == 72)
+                    else if (q ==KeyCursorUp)
                         n--;
-                    else if (q != 13 && q != 27)
+                    else if (q != KeyEnter && q != KeyEscape)
                         beep();
-                    // if (n==4) then n=1;
-                    // if (n==0) then n=3;
-                    // if (n==1) {ry;obwodka1(130,130,400,141,3);}
-                    // if (n==2) {ry;obwodka1(130,142,400,152,3);}
-                    // if (n==3) {ry;obwodka1(130,151,400,163,3);}
+                    if (n==4) n=1;
+                    if (n==0) n=3;
+                    if (n==1) {ry();obwodka1(130,130,400,141,3);}
+                    if (n==2) {ry();obwodka1(130,142,400,152,3);}
+                    if (n==3) {ry();obwodka1(130,151,400,163,3);}
                     // }; setfillstyle(1,11);
                 }
             } while (q!=13);
@@ -165,7 +176,7 @@ namespace PrzepisanyDyplom
             // putimage(prx1,pry1,p^,andput);
             // freemem(p,size);
             // };
-            m_graphics.DrawRectangle(m_pen, prx1, pry1, prx2-prx1, pry2-pry1);
+            m_graphics.DrawRectangle(m_pen, prx1, pry1*2, (prx2-prx1)*2, (pry2-pry1)*2);
         }
 
         private void PISZ(int wsx, int wsy, string napis)
@@ -246,6 +257,10 @@ namespace PrzepisanyDyplom
         {
             m_graphics.DrawEllipse(m_pen, wsx, wsy, radius, radius);
         }
+        const int KeyEscape = 27;
+        const int KeyCursorDown = 40;
+        const int KeyCursorUp = 38;
+        const int KeyEnter = 13;
 
     }
 }
